@@ -1,5 +1,4 @@
 #include "vector.h"
-#include <algorithm> // For std::copy, std::move, std::fill
 
 template<typename T>
 Vector<T>::Vector() : m_data(nullptr), m_capacity(0), m_size(0) {}
