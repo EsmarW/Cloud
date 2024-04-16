@@ -4,6 +4,8 @@
 #include <stdexcept> // Include <stdexcept> for std::out_of_range
 #include <algorithm> // For std::copy, std::move, std::fill
 
+using namespace std;
+
 template<typename T>
 class Vector {
 public:
