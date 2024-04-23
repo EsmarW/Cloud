@@ -1,6 +1,7 @@
 #include "loginWidget.h"
 #include <QVBoxLayout>
-#include "window.h"  // Ensure this include is correct based on your project structure
+#include <QMessageBox>  // Include for showing message boxes
+#include "window.h"     // Ensure this include is correct based on your project structure
 
 LoginWidget::LoginWidget(QWidget *parent) : QWidget(parent) {
     usernameEdit = new QLineEdit();
@@ -28,7 +29,6 @@ void LoginWidget::on_loginButton_clicked() {
         this->close();  // Optionally, handle this differently depending on your app's needs
     } else {
         // Handle wrong credentials
-        // Optionally, provide user feedback here
+        QMessageBox::warning(this, "Login Failed", "Incorrect username or password. Please try again.");
     }
 }
-
