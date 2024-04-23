@@ -4,12 +4,12 @@ template<typename T>
 Vector<T>::Vector() : m_data(nullptr), m_capacity(0), m_size(0) {}
 
 template<typename T>
-Vector<T>::Vector(size_t size) : m_capacity(size), m_size(size) {
+Vector<T>::Vector(int size) : m_capacity(size), m_size(size) {
     m_data = new T[size]();
 }
 
 template<typename T>
-Vector<T>::Vector(size_t size, const T& value) : m_capacity(size), m_size(size) {
+Vector<T>::Vector(int size, const T& value) : m_capacity(size), m_size(size) {
     m_data = new T[size];
     std::fill(m_data, m_data + size, value);
 }
@@ -70,14 +70,14 @@ typename Vector<T>::iterator Vector<T>::end() const {
 }
 
 template<typename T>
-size_t Vector<T>::size() const {
+int Vector<T>::size() const {
     return m_size;
 }
 
 template<typename T>
 void Vector<T>::push_back(const T& value) {
     if (m_size >= m_capacity) {
-        size_t new_capacity = m_capacity == 0 ? 1 : m_capacity * 2;
+        int new_capacity = m_capacity == 0 ? 1 : m_capacity * 2;
         T* new_data = new T[new_capacity];
         std::copy(m_data, m_data + m_size, new_data);
         delete[] m_data;
@@ -100,7 +100,7 @@ void Vector<T>::clear() {
 }
 
 template<typename T>
-T& Vector<T>::at(size_t index) {
+T& Vector<T>::at(int index) {
     if (index >= m_size) {
         throw std::out_of_range("Index out of range");
     }
@@ -108,7 +108,7 @@ T& Vector<T>::at(size_t index) {
 }
 
 template<typename T>
-const T& Vector<T>::at(size_t index) const {
+const T& Vector<T>::at(int index) const {
     if (index >= m_size) {
         throw std::out_of_range("Index out of range");
     }
