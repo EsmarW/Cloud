@@ -9,8 +9,8 @@ class Vector {
 public:
     // Constructors
     Vector(); // Default constructor
-    explicit Vector(size_t size); // Constructor with initial size
-    Vector(size_t size, const T& value); // Constructor with initial size and value
+    explicit Vector(int size); // Constructor with initial size
+    Vector(int size, const T& value); // Constructor with initial size and value
     Vector(const Vector<T>& other); // Copy constructor
     Vector(Vector<T>&& other) noexcept; // Move constructor
 
@@ -29,17 +29,17 @@ public:
     // Member functions
     iterator begin() const;
     iterator end() const;
-    size_t size() const;
+    int size() const;
     void push_back(const T& value);
     void pop_back();
     void clear();
-    T& at(size_t index);
-    const T& at(size_t index) const;
+    T& at(int index);
+    const T& at(int index) const;
 
 private:
     T* m_data; // Pointer to dynamically allocated array
-    size_t m_capacity; // Current capacity of the vector
-    size_t m_size; // Number of elements in the vector
+    int m_capacity; // Current capacity of the vector
+    int m_size; // Number of elements in the vector
 
     // Helper function for deep copy
     void copy(const Vector<T>& other);
