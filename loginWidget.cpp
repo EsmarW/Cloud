@@ -1,5 +1,6 @@
 #include "loginWidget.h"
 #include <QVBoxLayout>
+#include "window.h"  // Ensure this include is correct based on your project structure
 
 LoginWidget::LoginWidget(QWidget *parent) : QWidget(parent) {
     usernameEdit = new QLineEdit();
@@ -22,11 +23,12 @@ void LoginWidget::on_loginButton_clicked() {
 
     // Dummy check for example
     if (username == "user" && password == "pass") {
-        // Assuming 'MainWindow' is your main class handling the 2D modeler
-        MainWindow *mainWindow = new MainWindow();
-        mainWindow->show();
-        this->close();
+        Window *window = new Window();  // Assuming 'Window' is your main class
+        window->show();
+        this->close();  // Optionally, handle this differently depending on your app's needs
     } else {
         // Handle wrong credentials
+        // Optionally, provide user feedback here
     }
 }
+
