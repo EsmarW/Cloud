@@ -2,8 +2,10 @@ QT += widgets
 requires(qtConfig(combobox))
 
 HEADERS       = renderarea.h \
+                loginwidget.h \
                 window.h
 SOURCES       = main.cpp \
+                loginwidget.cpp \
                 renderarea.cpp \
                 window.cpp
 RESOURCES     = basicdrawing.qrc
