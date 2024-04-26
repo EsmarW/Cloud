@@ -13,10 +13,10 @@ public:
     vector(); // default constructor
     explicit vector(int s); // alternate constructor
     vector(const vector&); // copy constructor
+    ~vector(); // destructor
     vector& operator=(const vector&); // copy assignment
     vector(vector&&) noexcept; // move constructor
     vector& operator=(vector&&) noexcept; // move assignment
-    ~vector(); // destructor
     T& operator[] (int n); // access: return reference
     const T& operator[] (int n) const; // access: return reference
     int size() const; // the current size
