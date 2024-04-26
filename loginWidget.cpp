@@ -1,9 +1,12 @@
 #include "loginWidget.h"
 #include <QVBoxLayout>
-#include <QMessageBox>  // Include for showing message boxes
-#include "window.h"     // Ensure this include is correct based on your project structure
+#include <QMessageBox>
+#include "window.h"
+#include <QFile>
+#include <QTextStream>
+#include <QDebug>
 
-LoginWidget::LoginWidget(QWidget *parent) : QWidget(parent) {
+LoginWidget::LoginWidget(QWidget *parent) : QWidget(parent), loginAttempts(0) {
     usernameEdit = new QLineEdit();
     passwordEdit = new QLineEdit();
     passwordEdit->setEchoMode(QLineEdit::Password);
@@ -18,17 +21,40 @@ LoginWidget::LoginWidget(QWidget *parent) : QWidget(parent) {
 }
 
 void LoginWidget::on_loginButton_clicked() {
-    // Here you'd check credentials probably against a stored hash or a database
+    // Here you'd check credentials against a stored hash or a database
     QString username = usernameEdit->text();
     QString password = passwordEdit->text();
 
-    // Dummy check for example
-    if (username == "user" && password == "pass") {
-        Window *window = new Window();  // Assuming 'Window' is your main class
+    QFile file("credentials.txt");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QMessageBox::critical(this, "Error", "Could not open credentials database.");
+        return;
+    }
+
+    QTextStream in(&file);
+    bool found = false;
+    while (!in.atEnd()) {
+        QString line = in.readLine();
+        QStringList parts = line.split(":");
+        if (parts.size() == 2 && parts[0] == username && parts[1] == password) {
+            found = true;
+            break;
+        }
+    }
+    file.close();
+
+    if (found) {
+        Window *window = new Window();
         window->show();
-        this->close();  // Optionally, handle this differently depending on your app's needs
+        this->close();
     } else {
         // Handle wrong credentials
-        QMessageBox::warning(this, "Login Failed", "Incorrect username or password. Please try again.");
+        loginAttempts++;
+        if (loginAttempts >= 3) {
+            QMessageBox::critical(this, "Login Failed", "You have exceeded the maximum number of login attempts. Please try again later.");
+            loginButton->setEnabled(false); // Disable login button
+        } else {
+            QMessageBox::warning(this, "Login Failed", "Incorrect username or password. Please try again.");
+        }
     }
 }

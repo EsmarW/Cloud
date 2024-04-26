@@ -5,7 +5,8 @@
 #include <QLineEdit>
 #include <QPushButton>
 
-class LoginWidget : public QWidget {
+class LoginWidget : public QWidget
+{
     Q_OBJECT
 
 public:
@@ -18,6 +19,7 @@ private:
     QLineEdit *usernameEdit;
     QLineEdit *passwordEdit;
     QPushButton *loginButton;
+    int loginAttempts;
 };
 
 #endif // LOGINWIDGET_H
