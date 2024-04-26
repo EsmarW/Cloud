@@ -1,25 +1,25 @@
-#ifndef LOGINWIDGET_H
-#define LOGINWIDGET_H
+#ifndef LOGWIDGET_H
+#define LOGWIDGET_H
 
 #include <QWidget>
 #include <QLineEdit>
 #include <QPushButton>
 
-class LoginWidget : public QWidget
+class LogWidget : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit LoginWidget(QWidget *parent = nullptr);
+    explicit LogWidget(QWidget *parent = nullptr);
 
 private slots:
-    void on_loginButton_clicked();
+    void onLoginClicked();
 
 private:
-    QLineEdit *usernameEdit;
-    QLineEdit *passwordEdit;
+    QLineEdit *usernameLineEdit;
+    QLineEdit *passwordLineEdit;
     QPushButton *loginButton;
-    int loginAttempts;
 };
 
-#endif // LOGINWIDGET_H
+#endif // LOGWIDGET_H
+
