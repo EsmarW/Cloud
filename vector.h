@@ -4,45 +4,33 @@
 #include <stdexcept> // Include <stdexcept> for std::out_of_range
 #include <algorithm> // For std::copy, std::move, std::fill
 
-template<typename T>
-class Vector {
+template<class T>
+class vector {
+    int size_v; // the size
+    T* elem; // a pointer to the elements
+    int space; // size+free_space
 public:
-    // Constructors
-    Vector(); // Default constructor
-    explicit Vector(int size); // Constructor with initial size
-    Vector(int size, const T& value); // Constructor with initial size and value
-    Vector(const Vector<T>& other); // Copy constructor
-    Vector(Vector<T>&& other) noexcept; // Move constructor
-
-    // Destructor
-    ~Vector();
-
-    // Copy assignment operator
-    Vector<T>& operator=(const Vector<T>& other);
-
-    // Move assignment operator
-    Vector<T>& operator=(Vector<T>&& other) noexcept;
-
-    // Iterator
-    typedef T* iterator;
-
-    // Member functions
-    iterator begin() const;
-    iterator end() const;
-    int size() const;
-    void push_back(const T& value);
-    void pop_back();
-    void clear();
-    T& at(int index);
-    const T& at(int index) const;
-
-private:
-    T* m_data; // Pointer to dynamically allocated array
-    int m_capacity; // Current capacity of the vector
-    int m_size; // Number of elements in the vector
-
-    // Helper function for deep copy
-    void copy(const Vector<T>& other);
+    vector(); // default constructor
+    explicit vector(int s); // alternate constructor
+    vector(const vector&); // copy constructor
+    vector& operator=(const vector&); // copy assignment
+    vector(vector&&) noexcept; // move constructor
+    vector& operator=(vector&&) noexcept; // move assignment
+    ~vector(); // destructor
+    T& operator[] (int n); // access: return reference
+    const T& operator[] (int n) const; // access: return reference
+    int size() const; // the current size
+    int capacity() const; // current available space
+    void resize(int newsize); // grow
+    void push_back(T val); // add element
+    void reserve(int newalloc); // get more space
+    using iterator = T*;
+    using const_iterator = const T*;
+    iterator begin(); // points to first element
+    const_iterator begin() const;
+    iterator end(); // points to one beyond the last element
+    const_iterator end() const;
+    iterator insert(iterator p, const T& v); // insert a new element v before p
+    iterator erase(iterator p); // remove element pointed to by p
 };
-
 #endif // VECTOR_H
