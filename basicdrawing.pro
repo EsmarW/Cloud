@@ -3,10 +3,12 @@ requires(qtConfig(combobox))
 
 HEADERS       = renderarea.h \
                 loginwidget.h \
+                vector.h \
                 window.h
 SOURCES       = main.cpp \
                 loginwidget.cpp \
                 renderarea.cpp \
+                vector.cpp \
                 window.cpp
 RESOURCES     = basicdrawing.qrc
 

@@ -11,6 +11,7 @@ LogWidget::LogWidget(QWidget *parent) : QWidget(parent)
     passwordLineEdit = new QLineEdit(this);
     passwordLineEdit->setEchoMode(QLineEdit::Password);
     loginButton = new QPushButton("Login", this);
+    guestButton = new QPushButton("Login as Guest", this);
 
     // Layout
     QVBoxLayout *layout = new QVBoxLayout(this);
@@ -19,11 +20,13 @@ LogWidget::LogWidget(QWidget *parent) : QWidget(parent)
     layout->addWidget(new QLabel("Password:"));
     layout->addWidget(passwordLineEdit);
     layout->addWidget(loginButton);
+    layout->addWidget(guestButton);
 
     setLayout(layout);
 
-    // Connect the login button to the onLoginClicked slot
+    // Connect the login buttons to their respective function
     connect(loginButton, &QPushButton::clicked, this, &LogWidget::onLoginClicked);
+    connect(guestButton, &QPushButton::clicked, this, &LogWidget::onGuestLoginClicked);
 }
 
 void LogWidget::onLoginClicked()
@@ -37,4 +40,11 @@ void LogWidget::onLoginClicked()
     } else {
         QMessageBox::warning(this, "Login Failed", "Invalid credentials. Please try again.");
     }
+}
+
+void LogWidget::onGuestLoginClicked()
+{
+    Window *mainWindow = new Window();
+    mainWindow->show();
+    this->close();
 }

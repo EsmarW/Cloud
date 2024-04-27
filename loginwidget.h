@@ -14,11 +14,14 @@ public:
 
 private slots:
     void onLoginClicked();
+    void onGuestLoginClicked();
 
 private:
     QLineEdit *usernameLineEdit;
     QLineEdit *passwordLineEdit;
     QPushButton *loginButton;
+    QPushButton *guestButton;
+
 };
 
 #endif // LOGWIDGET_H

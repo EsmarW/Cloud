@@ -1,0 +1,10 @@
+debug/main.o
+debug/loginwidget.o
+debug/renderarea.o
+debug/shapes.o
+debug/vector.o
+debug/window.o
+debug/qrc_basicdrawing.o
+debug/moc_renderarea.o
+debug/moc_loginwidget.o
+debug/moc_window.o
