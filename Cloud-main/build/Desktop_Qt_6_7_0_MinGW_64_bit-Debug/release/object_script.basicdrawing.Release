@@ -1,0 +1,17 @@
+release/main.o
+release/draw.o
+release/loginwidget.o
+release/mainw.o
+release/mainwindow.o
+release/rectangle.o
+release/renderarea.o
+release/shapes.o
+release/vector.o
+release/window.o
+release/qrc_basicdrawing.o
+release/moc_renderarea.o
+release/moc_draw.o
+release/moc_loginwidget.o
+release/moc_mainw.o
+release/moc_mainwindow.o
+release/moc_window.o

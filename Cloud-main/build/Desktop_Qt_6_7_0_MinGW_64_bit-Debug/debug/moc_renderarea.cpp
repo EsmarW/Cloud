@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../../../../VM Shared/Cloud-main/renderarea.h"
+#include "../../../../../main/Cloud-main/renderarea.h"
 #include <QtCore/qmetatype.h>
 
 #include <QtCore/qtmochelpers.h>

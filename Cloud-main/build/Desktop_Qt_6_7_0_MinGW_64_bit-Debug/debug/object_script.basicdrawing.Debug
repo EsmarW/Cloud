@@ -1,0 +1,17 @@
+debug/main.o
+debug/draw.o
+debug/loginwidget.o
+debug/mainw.o
+debug/mainwindow.o
+debug/rectangle.o
+debug/renderarea.o
+debug/shapes.o
+debug/vector.o
+debug/window.o
+debug/qrc_basicdrawing.o
+debug/moc_renderarea.o
+debug/moc_draw.o
+debug/moc_loginwidget.o
+debug/moc_mainw.o
+debug/moc_mainwindow.o
+debug/moc_window.o

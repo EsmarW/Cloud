@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../../../../VM Shared/Cloud-main/loginwidget.h"
+#include "../../../../../main/Cloud-main/loginwidget.h"
 #include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
 

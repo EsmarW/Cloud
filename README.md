@@ -5,4 +5,3 @@ Edit this file (add name), commit, and push to main branch to confirm your acces
 
 Group Member Names:
 Esmar Walkman
-Evan Stewart

@@ -1,5 +1,8 @@
 #include "loginwidget.h"
 #include "window.h"
+#include "mainwindow.h"
+#include "mainw.h"
+
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QMessageBox>
@@ -44,7 +47,9 @@ void LogWidget::onLoginClicked()
 
 void LogWidget::onGuestLoginClicked()
 {
-    Window *mainWindow = new Window();
-    mainWindow->show();
+    //mainwindow *mainWindow = new mainwindow();
+    //mainWindow->show();
+    mainw *mainW = new mainw();
+    mainW->show();
     this->close();
 }
