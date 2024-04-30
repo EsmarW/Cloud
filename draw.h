@@ -9,6 +9,9 @@
 #include "line.h"
 #include "polyline.h"
 #include "polygon.h"
+#include "ellipse.h"
+#include "text.h"
+
 // Types of Shapes: Line, Polyline, Polygon, Rectangle, Ellipse, Text
 
 using namespace Vector;

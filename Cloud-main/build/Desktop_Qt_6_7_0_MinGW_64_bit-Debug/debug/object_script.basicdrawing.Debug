@@ -1,5 +1,6 @@
 debug/main.o
 debug/draw.o
+debug/ellipse.o
 debug/line.o
 debug/loginwidget.o
 debug/mainw.o
@@ -9,6 +10,7 @@ debug/polyline.o
 debug/rectangle.o
 debug/renderarea.o
 debug/shapes.o
+debug/text.o
 debug/vector.o
 debug/window.o
 debug/qrc_basicdrawing.o

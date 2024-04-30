@@ -42,7 +42,6 @@ void shape::setPen(Qt::GlobalColor c, int width, Qt::PenStyle s, Qt::PenCapStyle
     return;
 }
 
-
 void shape::setBrush(Qt::GlobalColor c, Qt::BrushStyle s)
 {
     brushType.setColor(c);

@@ -1,5 +1,6 @@
 release/main.o
 release/draw.o
+release/ellipse.o
 release/line.o
 release/loginwidget.o
 release/mainw.o
@@ -9,6 +10,7 @@ release/polyline.o
 release/rectangle.o
 release/renderarea.o
 release/shapes.o
+release/text.o
 release/vector.o
 release/window.o
 release/qrc_basicdrawing.o

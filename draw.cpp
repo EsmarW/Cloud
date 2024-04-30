@@ -52,6 +52,26 @@ void draw::paintEvent(QPaintEvent * /* event */)
     shapes.push_back(r);
     r->draw(painter, this);
 
+    ellipse* e = new ellipse(this);
+    e->setId(5);
+    e->setCoords(320,200);
+    e->setWidth(150);
+    e->setHeight(100);
+    e->setPen(Qt::GlobalColor::black, 5 ,Qt::PenStyle::SolidLine, Qt::PenCapStyle::FlatCap, Qt::PenJoinStyle::MiterJoin);
+    e->setBrush(Qt::GlobalColor::white, Qt::NoBrush);
+    e->draw(painter,this);
+
+    text* t = new text(this);
+    t->setId(6);
+    t->setSize(16);
+    t->setString(QString("2D Graphics Modeler"));
+    t->setCoords(100,350);
+    t->setWidth(500);
+    t->setHeight(50);
+    t->setStyle(QFont::Style::StyleNormal);
+    t->setWeight(QFont::Weight::Normal);
+    t->setPenColor(Qt::blue);
+    t->draw(painter,this);
 }
 
 void draw::setShapeList(vector<shape *> old)

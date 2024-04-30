@@ -3,6 +3,7 @@ requires(qtConfig(combobox))
 
 HEADERS       = renderarea.h \
                 draw.h \
+                ellipse.h \
                 line.h \
                 loginwidget.h \
                 mainw.h \
@@ -11,10 +12,12 @@ HEADERS       = renderarea.h \
                 polyline.h \
                 rectangle.h \
                 shapes.h \
+                text.h \
                 vector.h \
                 window.h
 SOURCES       = main.cpp \
                 draw.cpp \
+                ellipse.cpp \
                 line.cpp \
                 loginwidget.cpp \
                 mainw.cpp \
@@ -24,6 +27,7 @@ SOURCES       = main.cpp \
                 rectangle.cpp \
                 renderarea.cpp \
                 shapes.cpp \
+                text.cpp \
                 vector.cpp \
                 window.cpp
 RESOURCES     = basicdrawing.qrc

@@ -1,7 +1,5 @@
 #ifndef SHAPES_H
 #define SHAPES_H
-
-
 #include <cmath>
 #include <QBrush>
 #include <QPoint>
