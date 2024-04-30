@@ -3,8 +3,18 @@ using namespace Draw;
 
 void draw::paintEvent(QPaintEvent * /* event */)
 {
+ //   painter.setRenderHint(QPainter::Antialiasing, true);
     QPainter painter(this);
-    //painter.setRenderHint(QPainter::Antialiasing, true);
+    painter.setRenderHint(QPainter::Antialiasing, true);
+
+    line* l = new line(this);
+    l->setId(1);
+    l->setCoords(20,90);
+    l->setStart(20,90);
+    l->setEnd(100,20);
+    l->setPen(Qt::GlobalColor::blue, 2 ,Qt::PenStyle::SolidLine, Qt::PenCapStyle::FlatCap, Qt::PenJoinStyle::MiterJoin);
+    l->setBrush(Qt::GlobalColor::red, Qt::VerPattern);
+    l->draw(painter, this);
 
     rectangle* r = new rectangle(this);
     r->setId(4);

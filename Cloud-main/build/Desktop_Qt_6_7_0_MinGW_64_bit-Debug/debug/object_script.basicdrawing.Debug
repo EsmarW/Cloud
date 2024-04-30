@@ -1,5 +1,6 @@
 debug/main.o
 debug/draw.o
+debug/line.o
 debug/loginwidget.o
 debug/mainw.o
 debug/mainwindow.o

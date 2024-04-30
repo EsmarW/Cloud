@@ -3,6 +3,7 @@ requires(qtConfig(combobox))
 
 HEADERS       = renderarea.h \
                 draw.h \
+                line.h \
                 loginwidget.h \
                 mainw.h \
                 mainwindow.h \
@@ -12,6 +13,7 @@ HEADERS       = renderarea.h \
                 window.h
 SOURCES       = main.cpp \
                 draw.cpp \
+                line.cpp \
                 loginwidget.cpp \
                 mainw.cpp \
                 mainwindow.cpp \

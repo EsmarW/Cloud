@@ -1,5 +1,6 @@
 release/main.o
 release/draw.o
+release/line.o
 release/loginwidget.o
 release/mainw.o
 release/mainwindow.o
