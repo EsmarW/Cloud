@@ -4,6 +4,8 @@ release/line.o
 release/loginwidget.o
 release/mainw.o
 release/mainwindow.o
+release/polygon.o
+release/polyline.o
 release/rectangle.o
 release/renderarea.o
 release/shapes.o

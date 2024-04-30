@@ -4,6 +4,8 @@ debug/line.o
 debug/loginwidget.o
 debug/mainw.o
 debug/mainwindow.o
+debug/polygon.o
+debug/polyline.o
 debug/rectangle.o
 debug/renderarea.o
 debug/shapes.o

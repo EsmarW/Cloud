@@ -7,8 +7,10 @@
 #include "shapes.h"
 #include "rectangle.h"
 #include "line.h"
-
+#include "polyline.h"
+#include "polygon.h"
 // Types of Shapes: Line, Polyline, Polygon, Rectangle, Ellipse, Text
+
 using namespace Vector;
 using namespace Shapes;
 namespace Draw{

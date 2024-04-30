@@ -9,20 +9,46 @@ void draw::paintEvent(QPaintEvent * /* event */)
 
     line* l = new line(this);
     l->setId(1);
-    l->setCoords(20,90);
-    l->setStart(20,90);
+    l->setCoords(20,50);
+    l->setStart(20,100);
     l->setEnd(100,20);
-    l->setPen(Qt::GlobalColor::blue, 2 ,Qt::PenStyle::SolidLine, Qt::PenCapStyle::FlatCap, Qt::PenJoinStyle::MiterJoin);
+    l->setPen(Qt::GlobalColor::black, 2 ,Qt::PenStyle::SolidLine, Qt::PenCapStyle::RoundCap, Qt::PenJoinStyle::MiterJoin);
     l->setBrush(Qt::GlobalColor::red, Qt::VerPattern);
     l->draw(painter, this);
+
+    polyline* pl = new polyline(this);
+    pl->setId(2);
+    //pl->setCoords(100,50);
+    pl->set_point(QPoint(460,90));
+    pl->set_point(QPoint(470,20));
+    pl->set_point(QPoint(530,40));
+    pl->set_point(QPoint(540,80));
+    pl->set_point(QPoint(500,100));
+    pl->setPen(Qt::GlobalColor::black, 6 ,Qt::PenStyle::SolidLine, Qt::PenCapStyle::FlatCap, Qt::PenJoinStyle::MiterJoin);
+    pl->setBrush(Qt::GlobalColor::red, Qt::VerPattern);
+    shapeList.push_back(pl);
+    pl->move(-300,0); //Translates shape next to shape 1
+    pl->draw(painter, this);
+
+    polygon* p = new polygon(this);
+    p->setId(3);
+    p->set_point(QPoint(100,100));
+    p->set_point(QPoint(250,100));
+    p->set_point(QPoint(200,200));
+    p->set_point(QPoint(50,200));
+    p->setPen(Qt::GlobalColor::black, 3 ,Qt::PenStyle::SolidLine, Qt::PenCapStyle::FlatCap, Qt::PenJoinStyle::MiterJoin);
+    p->setBrush(Qt::GlobalColor::red, Qt::SolidPattern);
+    shapeList.push_back(p);
+    p->move(200,-70); //Translates shape next to shape 2
+    p->draw(painter, this);
 
     rectangle* r = new rectangle(this);
     r->setId(4);
     r->setCoords(20,200);
-    r->setWidth(170);
+    r->setWidth(200);
     r->setHeight(100);
-    r->setPen(Qt::GlobalColor::blue, 0 ,Qt::PenStyle::DashDotLine, Qt::PenCapStyle::RoundCap, Qt::PenJoinStyle::RoundJoin);
-    r->setBrush(Qt::GlobalColor::red, Qt::VerPattern);
+    r->setPen(Qt::GlobalColor::black, 1 ,Qt::PenStyle::SolidLine, Qt::PenCapStyle::RoundCap, Qt::PenJoinStyle::RoundJoin);
+    r->setBrush(Qt::GlobalColor::darkRed, Qt::CrossPattern);
     shapes.push_back(r);
     r->draw(painter, this);
 

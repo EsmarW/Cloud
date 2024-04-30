@@ -7,6 +7,8 @@ HEADERS       = renderarea.h \
                 loginwidget.h \
                 mainw.h \
                 mainwindow.h \
+                polygon.h \
+                polyline.h \
                 rectangle.h \
                 shapes.h \
                 vector.h \
@@ -17,6 +19,8 @@ SOURCES       = main.cpp \
                 loginwidget.cpp \
                 mainw.cpp \
                 mainwindow.cpp \
+                polygon.cpp \
+                polyline.cpp \
                 rectangle.cpp \
                 renderarea.cpp \
                 shapes.cpp \
