@@ -1,0 +1,76 @@
+1. Project Requirements Documentation
+    Customer Testimonials System
+    window.cpp:
+      Constructor setup for testimonials input and display: Lines 1-10
+2. Contact Us Method
+    window.cpp:
+      Constructor setup for contact details: Lines 1-10
+3. Display Graphic Objects with Minimum Size and ID
+    renderarea.cpp:
+      Minimum size setup: Lines 1-2, 10-11
+      Drawing shapes with ID: Lines 8-13
+    rectangle.h:
+      draw method where rectangle is drawn with its ID (Line 26).
+    polyline.cpp:
+      draw method where polyline is drawn with its ID (Line 10).
+    mainw.ui:
+      Canvas setup with specific dimensions (Lines 12-20).
+    draw.cpp:
+      draw method where shapes including ellipse are drawn with their ID (e.g., ellipse::draw at line 60).
+    shape_input_file.txt
+      Line 1: Information about unique shape IDs and types is provided which can be displayed in the rendering window.
+    shapes.txt
+      Line 1-29: Each entry provides detailed shape specifications including type, dimensions, and styles that can be used to render shapes in a graphical window.
+4. Read from Shape File
+    shape_input_file.txt
+      Line 1-29: The entire structure and content of the file are designed to be read and processed for rendering shapes.
+    shapes.txt
+      Line 1-29: The entire content of the file is structured to be read and used for rendering shapes, matching the requirements for importing shape data.
+5. Move Shapes (Admin Only)
+    text.cpp:
+      Moving text objects: Lines 18-20
+    rectangle.h:
+      move method to move the rectangle (Line 31).
+    polyline.cpp:
+      move method to move the polyline by updating all points (Line 18).
+    line.cpp:
+      move method moves the line to a new position (Line 51).
+    ellipse.cpp:
+      move method to move the ellipse to a new position (Line 25).
+6. Add and Remove Shapes (Admin Only)
+    window.cpp:
+      Adding and removing shapes via form: Lines 1-17
+    draw.cpp:
+      Method setShapeList potentially used for setting up the list of shapes, which could be extended for adding or removing shapes (Line 78).
+7. Generate Shape Listing Report by ID
+    shape_input_file.txt
+      Line 3: Shape IDs are provided, allowing for a report to be generated.
+    shapes.txt
+      Line 3, 10, 17, 24: The shapes have unique IDs, making it possible to create a listing sorted by these IDs.
+8. Generate Report of Shapes with Area, Sorted by Area
+    rectangle.h:
+      area method to calculate the area of the rectangle (Line 36).
+    polygon.cpp:
+      area method to calculate the area of a polygon (Line 30).
+    ellipse.cpp:
+      area method to calculate the area of the ellipse (Line 27).
+    shape_input_file.txt
+      Line 13-29: Lists shapes with dimensions that can have an area calculated (e.g., Rectangle, Ellipse), supporting area-based reporting.
+    shapes.txt
+      Line 17, 24, 27: Rectangle, Square, and Ellipse entries provide dimension data, allowing for area calculation and sorting.
+9. Generate Report of Shapes with Perimeter, Sorted by Perimeter
+    rectangle.h:
+      perimeter method to calculate the perimeter of the rectangle (Line 34).
+    polyline.cpp:
+      perimeter method to calculate the polyline's perimeter (Line 26).
+    line.cpp:
+      perimeter method calculates the length of the line, though it incorrectly returns 0 and needs correction (Line 53).
+    ellipse.cpp:
+      perimeter method to calculate the perimeter of the ellipse (Line 31).
+    shape_input_file.txt
+      Line 3-29: Most shapes listed have dimensions to support perimeter calculations.
+    shapes.txt
+      Line 3-29: All shape types except Text provide sufficient dimensional data to calculate perimeters.
+10. Save Changes Between Executions
+    No specific code snippet provided for persistent data storage. You may need to implement serialization or use a database/file system.
+    
