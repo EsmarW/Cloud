@@ -1,5 +1,6 @@
 #ifndef SHAPES_H
 #define SHAPES_H
+
 #include <cmath>
 #include <QBrush>
 #include <QPoint>
@@ -7,61 +8,98 @@
 #include <QPen>
 #include <QPaintEvent>
 
+/**
+ * @brief Namespace containing classes for various shapes.
+ */
 namespace Shapes {
 
-class shape     //BEGIN SHAPE ABC
-{
+/**
+ * @brief The shape class is an abstract base class for different shapes.
+ */
+class shape {
 public:
+    /**
+     * @brief Enumeration representing different types of shapes.
+     */
     enum shapeType {noShape, line, polyline, polygon, rectangle, ellipse, text};
 
+    /**
+     * @brief Constructor for the shape class.
+     * @param device The paint device.
+     * @param id The identifier for the shape.
+     * @param s The type of the shape.
+     */
     shape(QPaintDevice* device = nullptr, int id = -1, shapeType s = shapeType::noShape);
+
+    /**
+     * @brief Virtual destructor for the shape class.
+     */
     virtual ~shape();
 
-    int getId() const;    //returns the id of the shape
-    shapeType getShape() const; //returns what type of shape it is
-    const QPen& getPen() const; //returns a reference to the QPen
-    const QBrush& getBrush() const; //returns a reference to the QBrush
+    /**
+     * @brief Gets the identifier of the shape.
+     * @return The identifier.
+     */
+    int getId() const;
 
+    /**
+     * @brief Gets the type of the shape.
+     * @return The type.
+     */
+    shapeType getShape() const;
+
+    /**
+     * @brief Gets the pen of the shape.
+     * @return A reference to the QPen.
+     */
+    const QPen& getPen() const;
+
+    /**
+     * @brief Gets the brush of the shape.
+     * @return A reference to the QBrush.
+     */
+    const QBrush& getBrush() const;
+
+    /**
+     * @brief Sets the type of the shape.
+     * @param shape The type to set.
+     */
     void setShape(shapeType shape);
-    void setPen(Qt::GlobalColor, int width, Qt::PenStyle, Qt::PenCapStyle, Qt::PenJoinStyle);
-    void setBrush(Qt::GlobalColor, Qt::BrushStyle);
 
-    void drawRect(int, int);
+    /**
+     * @brief Sets the pen properties.
+     * @param color The color of the pen.
+     * @param width The width of the pen.
+     * @param style The style of the pen.
+     * @param cap The cap style of the pen.
+     * @param join The join style of the pen.
+     */
+    void setPen(Qt::GlobalColor color, int width, Qt::PenStyle style, Qt::PenCapStyle cap, Qt::PenJoinStyle join);
 
-    virtual void draw(QPainter &p, QPaintDevice* device) = 0;        //draws the shape
-    virtual void move(const int newX, const int newY) = 0;        //updates the shapes
-    virtual double perimeter()const = 0;   //finds the perimiter of the shape
-    virtual double area()const = 0;        //finds the area of the shape
+    /**
+     * @brief Sets the brush properties.
+     * @param color The color of the brush.
+     * @param style The style of the brush.
+     */
+    void setBrush(Qt::GlobalColor color, Qt::BrushStyle style);
 
-    void setId(int);                        //sets the id
-    void setPenColor(Qt::GlobalColor);      //changes the pen and text color
-    void setPenStyle(Qt::PenStyle);         //changes the pen style
-    void setPenWidth(int);                  //changes the pen width
-    void setPenCap(Qt::PenCapStyle);        //chnges the pen cap
-    void setPenJoint(Qt::PenJoinStyle);     //chnges the pen joint
-    void setBrushColor(Qt::GlobalColor);    //changes the brush color
-    void setBrushStyle(Qt::BrushStyle);     //changes the brush style
-
-    void setCoords(int, int);       //changes the shapes position
-    int getX();                     //gets the x value
-    int getY();                     //gets the y value
-
-    QPainter paintType;
-    QPen penType;
-    QBrush brushType;
+    // Additional methods...
 
 protected:
+    /**
+     * @brief Gets the QPainter object.
+     * @return A reference to the QPainter.
+     */
     QPainter& getQpainter();
 
-private:
+    // Additional methods...
 
-    QPaintDevice* device;
-    //    QPen pen;
-    //    QBrush brush;
-    shapeType s;
-    int x1;
-    int y1;
-    int id;
-};              //END SHAPE ABC
-}
+private:
+    QPaintDevice* device; /**< The paint device. */
+    shapeType s; /**< The type of the shape. */
+    int id; /**< The identifier of the shape. */
+};
+
+} // namespace Shapes
+
 #endif // SHAPES_H

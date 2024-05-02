@@ -12,39 +12,55 @@
 #include "ellipse.h"
 #include "text.h"
 
-// Types of Shapes: Line, Polyline, Polygon, Rectangle, Ellipse, Text
+/**
+ * @brief Namespace containing classes for drawing shapes.
+ */
+namespace Draw {
 
-using namespace Vector;
-using namespace Shapes;
-namespace Draw{
-class draw : public QWidget
-{
+/**
+ * @brief The draw class is a QWidget subclass for drawing various shapes.
+ */
+class draw : public QWidget {
     Q_OBJECT
 
 public:
-   // explicit draw(QWidget *parent = 0);
-    explicit draw(QWidget *parent): QWidget(parent)
-    {
-    }
+    /**
+     * @brief Constructor for the draw class.
+     * @param parent The parent widget.
+     */
+    explicit draw(QWidget *parent) : QWidget(parent) {}
 
+    /**
+     * @brief Draws the shapes stored in the shape list.
+     */
     void drawShapes();
-    void setShapeList(vector<shape*>);
-    vector<shape*>& getShapeList();
 
-    //draw(QWidget *parent = nullptr);
-    //QSize minimumSizeHint() const override;
-    //QSize sizeHint() const override;
-    //void addShape(shape *shapes);
-    //void clearShapes();
+    /**
+     * @brief Sets the list of shapes to be drawn.
+     * @param shapeList The list of shapes.
+     */
+    void setShapeList(Vector::vector<Shapes::shape*> shapeList);
+
+    /**
+     * @brief Gets the list of shapes to be drawn.
+     * @return The list of shapes.
+     */
+    Vector::vector<Shapes::shape*>& getShapeList();
 
 protected:
+    /**
+     * @brief Paints the widget and its child widgets if needed.
+     * @param event The paint event.
+     */
     void paintEvent(QPaintEvent *event) override;
 
 public:
-    vector<shape*> shapes;
-    shape* shapePtr;
-    QPainter* shp;
-   vector<shape*> shapeList;
+    Vector::vector<Shapes::shape*> shapes; /**< The list of shapes. */
+    Shapes::shape* shapePtr; /**< Pointer to a shape. */
+    QPainter* shp; /**< Pointer to a QPainter object. */
+    Vector::vector<Shapes::shape*> shapeList; /**< The list of shapes to be drawn. */
 };
-}
+
+} // namespace Draw
+
 #endif // DRAW_H
