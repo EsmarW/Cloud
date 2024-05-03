@@ -2,11 +2,9 @@
 #define MAINW_H
 
 #include <QDialog>
-#include <QTabWidget>
 #include "draw.h"
 #include "vector.h"
 #include "shapes.h"
-#include "aboutus.h"
 
 using namespace Draw;
 using namespace Vector;
@@ -58,7 +56,6 @@ private:
     shape* s; /**< Pointer to the shape object. */
     vector<shape*> shapeList; /**< The list of shapes. */
     bool admin; /**< Flag indicating admin status. */
-    AboutUsWidget* aboutUsWidget; /**<AboutUsWidget.*/
 };
 
 #endif // MAINW_H
