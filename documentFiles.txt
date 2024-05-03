@@ -72,5 +72,5 @@
     shapes.txt
       Line 3-29: All shape types except Text provide sufficient dimensional data to calculate perimeters.
 10. Save Changes Between Executions
-    No specific code snippet provided for persistent data storage. You may need to implement serialization or use a database/file system.
+    No specific code founded that doing it
     
