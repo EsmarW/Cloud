@@ -2,12 +2,28 @@
 #include "ui_mainw.h"
 #include <QPainter>
 #include <QtWidgets>
+#include <QVBoxLayout>
+#include <QFile>
+#include <QTextStream>
 
 mainw::mainw(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::mainw)
 {
     ui->setupUi(this);
+
+    // Get the existing widget from the "About Us" tab
+    QWidget* aboutUsTabWidget = ui->tabWidget->findChild<QWidget*>("aboutUsWidget");
+
+    // Create an instance of AboutUsWidget
+    AboutUsWidget* aboutUsWidget = new AboutUsWidget(this);
+
+    // Set the layout of the existing widget to a layout containing the AboutUsWidget
+    if (aboutUsTabWidget) {
+        QVBoxLayout* layout = new QVBoxLayout(aboutUsTabWidget);
+        layout->addWidget(aboutUsWidget);
+        aboutUsTabWidget->setLayout(layout);
+    }
 }
 
 mainw::~mainw()

@@ -2,6 +2,7 @@ QT += widgets
 requires(qtConfig(combobox))
 
 HEADERS       = renderarea.h \
+                aboutus.h \
                 draw.h \
                 ellipse.h \
                 line.h \
@@ -16,6 +17,7 @@ HEADERS       = renderarea.h \
                 vector.h \
                 window.h
 SOURCES       = main.cpp \
+                aboutus.cpp \
                 draw.cpp \
                 ellipse.cpp \
                 line.cpp \
@@ -38,3 +40,5 @@ INSTALLS += target
 
 FORMS += \
     mainw.ui
+
+DISTFILES +=
