@@ -2,6 +2,7 @@ QT += widgets
 requires(qtConfig(combobox))
 
 HEADERS       = \
+                aboutuswidget.h \
                 draw.h \
                 ellipse.h \
                 fileparser.h \
@@ -13,9 +14,11 @@ HEADERS       = \
                 polyline.h \
                 rectangle.h \
                 shapes.h \
+                testimonials.h \
                 text.h \
                 vector.h
 SOURCES       = main.cpp \
+                aboutuswidget.cpp \
                 draw.cpp \
                 ellipse.cpp \
                 fileparser.cpp \
@@ -27,6 +30,7 @@ SOURCES       = main.cpp \
                 polyline.cpp \
                 rectangle.cpp \
                 shapes.cpp \
+                testimonials.cpp \
                 text.cpp \
                 vector.cpp
 RESOURCES     = basicdrawing.qrc
