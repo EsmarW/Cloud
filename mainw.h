@@ -6,6 +6,8 @@
 #include "vector.h"
 #include "shapes.h"
 #include "move.h"
+#include "aboutuswidget.h"
+#include "testimonials.h"
 using namespace Draw;
 using namespace Vector;
 using namespace Shapes;
@@ -41,6 +43,8 @@ private:
     shape* s;
     vector<shape*> shapeList;
     bool admin;
+    AboutUsWidget *aboutUsWidget;
+    TestimonialWidget *testimonialWidget;
 };
 
 #endif // MAINW_H

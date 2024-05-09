@@ -10,6 +10,47 @@ mainw::mainw(QWidget *parent)
     ui->setupUi(this);
     ui->canvas->drawShapes();
 
+    // Get the existing widget from the "Testimonial" tab
+       QWidget *testimonialTabWidget = ui->tabWidget->findChild<QWidget*>("testimonialWidget_2");
+
+       // Create an instance of TestimonialWidget
+       TestimonialWidget *testimonialWidget_2 = new TestimonialWidget(this);
+
+       // Set the layout of the existing widget to a layout containing the TestimonialWidget
+       if (testimonialTabWidget) {
+           // Check if the layout is already set, if so, delete it
+           if (testimonialTabWidget->layout())
+               delete testimonialTabWidget->layout(); // Delete existing layout to avoid memory leaks
+
+           QVBoxLayout *layout = new QVBoxLayout(testimonialTabWidget);
+           layout->addWidget(testimonialWidget_2);
+           testimonialTabWidget->setLayout(layout);
+       } else {
+           // If the "Testimonial" tab widget doesn't exist, delete the instance of TestimonialWidget
+           delete testimonialWidget_2;
+       }
+
+       // Get the existing widget from the "About Us" tab
+           QWidget *aboutUsTabWidget = ui->tabWidget->findChild<QWidget*>("aboutUsWidget_2");
+
+           // Create an instance of AboutUsWidget
+           AboutUsWidget *aboutUsWidget_2 = new AboutUsWidget(this);
+
+           // Set the layout of the existing widget to a layout containing the AboutUsWidget
+           if (aboutUsTabWidget) {
+               // Check if the layout is already set, if so, delete it
+               if (aboutUsTabWidget->layout())
+                   delete aboutUsTabWidget->layout(); // Delete existing layout to avoid memory leaks
+
+               QVBoxLayout *layout = new QVBoxLayout(aboutUsTabWidget);
+               layout->addWidget(aboutUsWidget_2);
+               aboutUsTabWidget->setLayout(layout);
+           } else {
+               // If the "About Us" tab widget doesn't exist, delete the instance of AboutUsWidget
+               delete aboutUsWidget_2;
+           }
+
+
 }
 
 mainw::~mainw()
