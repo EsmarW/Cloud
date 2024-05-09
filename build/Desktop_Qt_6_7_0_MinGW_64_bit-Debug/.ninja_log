@@ -1,0 +1,13 @@
+# ninja log v5
+2	1034	7344044759646803	basicdrawing_autogen/timestamp	1edbc0a8f32382cb
+2	1034	7344044759646803	basicdrawing_autogen/mocs_compilation.cpp	1edbc0a8f32382cb
+2	1034	7344044759646803	C:/Qt/Examples/Qt-6.7.0/widgets/painting/basicdrawing/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/basicdrawing_autogen/timestamp	1edbc0a8f32382cb
+2	1034	7344044759646803	C:/Qt/Examples/Qt-6.7.0/widgets/painting/basicdrawing/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/basicdrawing_autogen/mocs_compilation.cpp	1edbc0a8f32382cb
+1035	1105	7344044761111946	.rcc/qrc_basicdrawing.cpp	71fea16ab9e8d207
+1035	1105	7344044761111946	C:/Qt/Examples/Qt-6.7.0/widgets/painting/basicdrawing/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qrc_basicdrawing.cpp	71fea16ab9e8d207
+1121	1261	7344044762644121	CMakeFiles/basicdrawing.dir/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qrc_basicdrawing.cpp.obj	edbab6b0bc81bd1f
+1114	4723	7344044797138711	CMakeFiles/basicdrawing.dir/main.cpp.obj	6abab1af7178e851
+1106	4830	7344044798255909	CMakeFiles/basicdrawing.dir/basicdrawing_autogen/mocs_compilation.cpp.obj	a1333287ca1f80a3
+1110	4856	7344044798527873	CMakeFiles/basicdrawing.dir/renderarea.cpp.obj	f9aca7dfed5f4805
+1117	9127	7344044841275427	CMakeFiles/basicdrawing.dir/window.cpp.obj	3395a7ae2eee28f8
+9132	9509	7344044845075387	basicdrawing.exe	17b35f51847cf6fd

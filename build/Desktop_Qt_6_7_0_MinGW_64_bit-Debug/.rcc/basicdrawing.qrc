@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="images/brick.png">C:/Qt/Examples/Qt-6.7.0/widgets/painting/basicdrawing/images/brick.png</file>
+    <file alias="images/qt-logo.png">C:/Qt/Examples/Qt-6.7.0/widgets/painting/basicdrawing/images/qt-logo.png</file>
+  </qresource>
+</RCC>
+

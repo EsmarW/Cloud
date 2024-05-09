@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-bafb80413c69ba019e2c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "basicdrawing",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "basicdrawing::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-basicdrawing-Debug-6421bc56672b5fd777c9.json",
+					"name" : "basicdrawing",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "basicdrawing_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-basicdrawing_autogen-Debug-acbea8aeda9907c1c93b.json",
+					"name" : "basicdrawing_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "basicdrawing_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-basicdrawing_autogen_timestamp_deps-Debug-f05c4c2e1f437fb4a1b3.json",
+					"name" : "basicdrawing_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Qt/Examples/Qt-6.7.0/widgets/painting/basicdrawing/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug",
+		"source" : "C:/Qt/Examples/Qt-6.7.0/widgets/painting/basicdrawing"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
