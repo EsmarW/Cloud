@@ -10,7 +10,7 @@ AboutUsWidget::AboutUsWidget(QWidget *parent) : QWidget(parent)
     descriptionLabel = new QLabel("We are team cloud", this);
     imageLabel = new QLabel(this);
     imageLabel->setPixmap(QPixmap("/home/cs1c/Downloads/Cloud-main/images/logo.png")); // Replace ":/path/to/your/image.png" with the actual path to your PNG file
-    nameLabel = new QLabel("Names:<br/>Evan Stewart<br/>Esmar Walkman",this);
+    nameLabel = new QLabel("Names:<br/>Evan Stewart<br/>Esmar Walkman<br/>Josh Baxter<br/>Max Tan<br/>Yu-chen Chung<br/>Kaiass Asadi",this);
     // Set the label to scale its contents to fit
     imageLabel->setScaledContents(true);
 
