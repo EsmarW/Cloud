@@ -1,4 +1,5 @@
 release/main.o
+release/add.o
 release/draw.o
 release/ellipse.o
 release/fileparser.o
@@ -13,6 +14,7 @@ release/shapes.o
 release/text.o
 release/vector.o
 release/qrc_basicdrawing.o
+release/moc_add.o
 release/moc_draw.o
 release/moc_loginwidget.o
 release/moc_mainw.o

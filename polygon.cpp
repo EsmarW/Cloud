@@ -9,12 +9,15 @@ void polygon::set_point(const QPoint& point)
 
 void polygon::draw(QPainter &p, QPaintDevice* device)
 {
-    p.setPen(penType);
-    p.setBrush(brushType);
+    p.setFont(QString("Times"));
+    p.setPen(Qt::black);
     QPoint b = *points.begin();
     b.setX(b.x()-20);
     b.setY(b.y()-0);
     p.drawText(b,QString::number(getId()));
+
+    p.setPen(penType);
+    p.setBrush(brushType);
     p.drawPolygon(points.begin(), points.size());
 }
 
@@ -36,51 +39,44 @@ double polygon::area()const
     int bigy = points[0].y();;
     double area=0;
 
-
     for(int i =0;i < points.size();i++)
     {
-        //min x
         if(points[i].x ()< smallx)
         {
             smallx=points[i].x();
         }
 
-        //max x
         if(points[i].x ()>bigx)
         {
             bigx=points[i].x();
         }
 
-        //min y
         if(points[i].y ()< smally)
         {
             smally=points[i].y();
         }
 
-        //max y
         if(points[i].y ()>bigy)
         {
             bigy=points[i].y();
         }
     }
-    //area of rectangle formed
-    area=(bigx-smallx)*(bigy-smally);
 
+    area=(bigx-smallx)*(bigy-smally);
     return area;
 }
 
 double polygon::perimeter()const
 {
-    double perim=0;
-    double hold;
+    double p=0;
+    double add;
 
     for(int i = 0;i < points.size()-1;i++)
     {
-        // distance formula
-        hold = sqrt(pow(points[i+1].x()- points[i].x(),2)+ pow(points[i+1].y()- points[i].y(),2));
-        perim+=hold;
+        // perimeter formula
+        add = sqrt(pow(points[i+1].x()- points[i].x(),2)+ pow(points[i+1].y()- points[i].y(),2));
+        p+=add;
     }
-
-    return perim;
+    return p;
 }
 }

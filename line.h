@@ -8,7 +8,6 @@ class line : public shape //Public inheritance
 public:
     //Line();
     line(QPaintDevice* device = nullptr, int id = -1);
-    //    Line(QPaintDevice* device = nullptr, int id = -1, shapeType s = shapeType::line, int x =0, int y=0);
     ~line();
 
     void setEnd(int endX, int endY);

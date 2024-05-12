@@ -9,7 +9,7 @@
 
 namespace Shapes {
 
-class shape     //BEGIN SHAPE ABC
+class shape
 {
 public:
     enum shapeType {noShape, line, polyline, polygon, rectangle, ellipse, text};
@@ -17,36 +17,39 @@ public:
     shape(QPaintDevice* device = nullptr, int id = -1, shapeType s = shapeType::noShape);
     virtual ~shape();
 
-    int getId() const;    //returns the id of the shape
-    shapeType getShape() const; //returns what type of shape it is
+    int getId() const;    //returns ID # of shape
+    shapeType getShape() const; //returns Enum Shape Type
     const QPen& getPen() const; //returns a reference to the QPen
     const QBrush& getBrush() const; //returns a reference to the QBrush
 
     void setShape(shapeType shape);
     void setPen(Qt::GlobalColor, int width, Qt::PenStyle, Qt::PenCapStyle, Qt::PenJoinStyle);
+    void setPen(QPen pen) { this->pen = pen; };
     void setBrush(Qt::GlobalColor, Qt::BrushStyle);
+    void setBrush(QBrush brush) {this->brush = brush;}
+    void setRect(QRect r) { this->rect = r;}
 
     void drawRect(int, int);
 
     virtual void draw(QPainter &p, QPaintDevice* device) = 0;        //draws the shape
-    virtual void move(const int newX, const int newY) = 0;        //updates the shapes
-    virtual double perimeter()const = 0;   //finds the perimiter of the shape
-    virtual double area()const = 0;        //finds the area of the shape
+    virtual void move(const int newX, const int newY) = 0;        //moves the shapes
+    virtual double perimeter()const = 0;   //calculates the perimeter of the shape
+    virtual double area()const = 0;        //calculates the area of the shape
 
     void setId(int);                        //sets the id
-    void setPenColor(Qt::GlobalColor);      //changes the pen and text color
+    void setPenColor(Qt::GlobalColor);      //changes the pen/text color
     void setPenStyle(Qt::PenStyle);         //changes the pen style
     void setPenWidth(int);                  //changes the pen width
-    void setPenCap(Qt::PenCapStyle);        //chnges the pen cap
-    void setPenJoint(Qt::PenJoinStyle);     //chnges the pen joint
+    void setPenCap(Qt::PenCapStyle);        //changes the pen cap style
+    void setPenJoint(Qt::PenJoinStyle);     //changes the pen joint style
     void setBrushColor(Qt::GlobalColor);    //changes the brush color
     void setBrushStyle(Qt::BrushStyle);     //changes the brush style
 
-    void setCoords(int, int);       //sets shapes position
-    void moveCoords(int, int);      //moves shapes position
+    void setCoords(int, int);       //sets shape drawing position
+    void moveCoords(int, int);      //moves shape position
 
-    int getX();                     //gets the x value
-    int getY();                     //gets the y value
+    int getX();                     // X coordinate
+    int getY();                     // Y coordinate
 
     QPainter paintType;
     QPen penType;
@@ -62,12 +65,13 @@ protected:
 private:
 
     QPaintDevice* device;
-    //    QPen pen;
-    //    QBrush brush;
+        QPen pen;
+        QBrush brush;
+        QRect rect;
     shapeType s;
     int x1;
     int y1;
     int id;
-};              //END SHAPE ABC
+};
 }
 #endif // SHAPES_H

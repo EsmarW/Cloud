@@ -9,6 +9,8 @@ move::move(QWidget *parent)
     , ui(new Ui::move)
 {
     ui->setupUi(this);
+    setWindowTitle(tr("Move Shape")); //Sets name to window
+
 }
 
 move::~move()
@@ -21,24 +23,27 @@ void move::on_exitButton_clicked(){
 }
 
 void move::on_updateButton_clicked(){
-    //LogWidget::mainW->update();
-    //int id;
+
     QString temp;
     temp = ui->idInput->text();
-    //id = temp.split(" ")[0].toInt();
     id = temp.toInt();
-    //int x,y;
     x = ui->xBox->value();
     y = ui->yBox->value();
-    std::cout << id << std::endl;
-    std::cout << x << std::endl;
-    std::cout << y << std::endl;
+    // std::cout << id << std::endl;
+    // std::cout << x << std::endl;
+    // std::cout << y << std::endl;
 
-    int i = 0;
-    while(id != shapes[i]->getId()){
-        i++;}
-    cout << i << endl ;
-    shapes[i]->move(x,y);
+    //int i = 0;
+    //while(id != shapes[i]->getId()){
+    //    ++i;}
+    //cout << i << endl ; //one less than ID, for vector index
+
+    if (id <= shapes.size() && id > 0 ){
+        shapes[--id]->move(x,y);}
+    else{
+        //Invalid Shape Id Entered Pop up
+        QMessageBox::warning(this, "Invalid Shape ID", "Invalid Shape ID. Please try again.");
+    }
 
     this->close();
 }

@@ -9,12 +9,16 @@ void polyline::set_point(const QPoint& point)
 
 void polyline::draw(QPainter &p, QPaintDevice* device)
 {
-    p.setPen(penType);
-    p.setBrush(brushType);
+    p.setFont(QString("Times"));
     QPoint b = *points.begin();
+    p.setPen(Qt::black);
     b.setX(b.x()-20);
     b.setY(b.y()-60);
     p.drawText(b,QString::number(getId()));
+
+    p.setPen(penType);
+    p.setBrush(brushType);
+
     p.drawPolyline(points.begin(), points.size());
 }
 

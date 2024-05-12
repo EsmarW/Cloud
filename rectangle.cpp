@@ -33,9 +33,12 @@ void rectangle::setHeight(int height)
 
 void rectangle::draw(QPainter &p, QPaintDevice* device)
 {
+    //p.setPen(Qt::GlobalColor::darkMagenta);
+    p.setFont(QString("Times"));
+    p.setPen(Qt::black);
+    p.drawText(getX(),getY()-10,QString::number(getId()));
     p.setBrush(brushType);
     p.setPen(penType);
-    p.drawText(getX(),getY()-5,QString::number(getId()));
     p.drawRect(getX(),getY(),w,h);
 }
 

@@ -31,16 +31,9 @@ public:
     void drawShapes();
     void clearShapes();
     void addShape(shape *shapePtr);
-
     void initializeShapes();
     void setShapeList(vector<shape*>);
     vector<shape*>& getShapeList();
-
-    //draw(QWidget *parent = nullptr);
-    //QSize minimumSizeHint() const override;
-    //QSize sizeHint() const override;
-    //void addShape(shape *shapes);
-    //void clearShapes();
 
     vector<shape*> shapes;
     vector<shape*> &shapesListPtr = shapes;
@@ -50,11 +43,6 @@ public:
 protected:
     void paintEvent(QPaintEvent *event) override;
 
-public:
-    // vector<shape*> shapes;
-    // shape* shapePtr;
-    // QPainter* shp;
-    //vector<shape*> shapeList;
 };
 }
 #endif // DRAW_H

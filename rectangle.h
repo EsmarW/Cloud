@@ -10,7 +10,7 @@ namespace Shapes {
 class rectangle : public shape
 {
 public:
-    rectangle(QPaintDevice* device = nullptr,int id = 0);    //defualt constructor
+    rectangle(QPaintDevice* device = nullptr,int id = -1);
     //    ~rectangle();
 
     void set_rect(const QRect& rect);

@@ -7,6 +7,7 @@
 LogWidget::LogWidget(QWidget *parent) : QWidget(parent)
 {
     // Create UI elements
+    setWindowTitle(tr("Login")); //Sets name to window
     usernameLineEdit = new QLineEdit(this);
     passwordLineEdit = new QLineEdit(this);
     passwordLineEdit->setEchoMode(QLineEdit::Password);

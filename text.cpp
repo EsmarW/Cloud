@@ -18,10 +18,14 @@ void text::draw(QPainter &p, QPaintDevice* device)
     QString idString;
     int i = getId();
     idString = (char)i;
+    p.setPen(Qt::black);
     p.drawText(getX()-10,getY()-10,QString::number(getId()));
 
     //p.begin(device);
+    p.setPen(penType);
+    p.setBrush(brushType);
     p.setFont(font);
+
     setStyle(QFont::Style::StyleItalic);
     setWeight(QFont::Weight::Normal);
     setAlignment(Qt::AlignmentFlag::AlignCenter);
@@ -35,7 +39,6 @@ void text::draw(QPainter &p, QPaintDevice* device)
     rect.setHeight(h);
     //getQpainter().save();
     p.drawText(rect, alignment, str);
-
     //getQpainter().restore();
     //p.end();
     //p.drawRect(getX(),getY(),w,h);

@@ -1,4 +1,5 @@
 debug/main.o
+debug/add.o
 debug/draw.o
 debug/ellipse.o
 debug/fileparser.o
@@ -13,6 +14,7 @@ debug/shapes.o
 debug/text.o
 debug/vector.o
 debug/qrc_basicdrawing.o
+debug/moc_add.o
 debug/moc_draw.o
 debug/moc_loginwidget.o
 debug/moc_mainw.o

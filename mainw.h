@@ -6,6 +6,8 @@
 #include "vector.h"
 #include "shapes.h"
 #include "move.h"
+#include "add.h"
+
 using namespace Draw;
 using namespace Vector;
 using namespace Shapes;

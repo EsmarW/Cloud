@@ -21,9 +21,12 @@ void line::setStart(int X, int Y)
 
 void line::draw(QPainter &p, QPaintDevice* device)
 {
+    p.setFont(QString("Times"));
+    p.setPen(Qt::black);
+    p.drawText(getX(),getY()-20,QString::number(getId()));
+
     p.setPen(penType);
     p.setBrush(brushType);
-    p.drawText(getX(),getY()-20,QString::number(getId()));
     p.drawLine(startX,startY,endX,endY);
 }
 
@@ -37,7 +40,6 @@ double line::perimeter()const
     return 0;
 }
 
-
 void line::move(const int x, const int y)
 {
     moveCoords(x,y);
@@ -46,6 +48,4 @@ void line::move(const int x, const int y)
     startX += x;
     startY += y;
 }
-
-
 }

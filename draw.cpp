@@ -69,7 +69,7 @@ void draw::drawShapes()
     t->setHeight(50);
     t->setStyle(QFont::Style::StyleNormal);
     t->setWeight(QFont::Weight::Normal);
-    //t->setPen(Qt::GlobalColor::blue, 5 ,Qt::PenStyle::SolidLine, Qt::PenCapStyle::FlatCap, Qt::PenJoinStyle::RoundJoin);
+    t->setPen(Qt::GlobalColor::darkMagenta, 5 ,Qt::PenStyle::SolidLine, Qt::PenCapStyle::FlatCap, Qt::PenJoinStyle::RoundJoin);
     t->setFont(QString("Impact")); //Font
     shapes.push_back(t);
     //t->draw(painter,this);*/
@@ -81,9 +81,6 @@ void draw::drawShapes()
 void draw::addShape(shape *shapePtr){
 
     shapes.push_back(shapePtr);
-
-    //int id = shapePtr->getId();
-    //std::cout << id << std::endl;
 
 }
 
@@ -97,8 +94,11 @@ void draw::paintEvent(QPaintEvent * /* event */)
     painter.setRenderHint(QPainter::Antialiasing, true);
 
     for (int i = 0; i < shapes.size(); ++i) {
-        //shapes[i]->draw(painter,this);
-        shape::shapeType shapeT = shapes[i]->getShape();
+
+        shapes[i]->draw(painter,this);
+    }
+}
+        /*shape::shapeType shapeT = shapes[i]->getShape();
 
         switch(shapeT){
     case 1: {
@@ -137,8 +137,7 @@ void draw::paintEvent(QPaintEvent * /* event */)
 
     default:{
             std::cout << "Error; invalid shape ID\n";
-        } break;
-    }
+        } break; */
 
 
         //getShapeList()[i]->draw(painter, this);
@@ -149,7 +148,6 @@ void draw::paintEvent(QPaintEvent * /* event */)
 
         //shapes[i]->draw(painter, this);
 
-    }
 /*
     line* l = new line(this);
     l->setId(1);
@@ -222,7 +220,7 @@ void draw::paintEvent(QPaintEvent * /* event */)
     t->draw(painter,this);*/
 
 //    QWidget::setUpdatesEnabled(true);
-}
+
 
 void draw::setShapeList(vector<shape *> old)
 {
@@ -233,26 +231,3 @@ vector<shape*>& draw::getShapeList()
 {
     return this->shapes;
 }
-
-/*
-QSize draw::minimumSizeHint() const
-{
-    return QSize(1000, 500);
-}
-
-QSize draw::sizeHint() const
-{
-    return QSize(1000, 500);
-}
-
-void draw::addShape(shape *s)
-{
-    shapes.push_back(s);
-}
-
-void draw::clearShapes()
-{
-    shapes.resize(0);
-    update();
-}
-*/

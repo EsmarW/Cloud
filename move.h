@@ -2,6 +2,7 @@
 #define MOVE_H
 
 #include <QDialog>
+#include <QMessageBox>
 //#include "mainw.h"
 //#include "loginwidget.h"
 #include "shapes.h"
@@ -42,9 +43,7 @@ private:
     Ui::move *ui;
     int x,y;
     int id;
-    //draw d;
-    //vector<shape*> shapes;
-    //vector<shape*> &shapes;
+
 };
 
 #endif // MOVE_H
