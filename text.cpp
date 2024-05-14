@@ -12,36 +12,20 @@ text::~text()
 
 void text::draw(QPainter &p, QPaintDevice* device)
 {
-    //p.setPen(penType);
-    //p.setBrush(brushType);
-
-    QString idString;
-    int i = getId();
-    idString = (char)i;
+    p.setFont(QString("Times"));
     p.setPen(Qt::black);
-    p.drawText(getX()-10,getY()-10,QString::number(getId()));
+    p.drawText(getX(),getY()-10,QString::number(getId()));
 
-    //p.begin(device);
     p.setPen(penType);
     p.setBrush(brushType);
     p.setFont(font);
-
-    setStyle(QFont::Style::StyleItalic);
-    setWeight(QFont::Weight::Normal);
-    setAlignment(Qt::AlignmentFlag::AlignCenter);
-    setString(QString("2D Graphics Modeler"));
-    //p.setPen(Qt::GlobalColor::darkMagenta);
 
     QRect rect;
     rect.setX(getX());
     rect.setY(getY());
     rect.setWidth(w);
     rect.setHeight(h);
-    //getQpainter().save();
     p.drawText(rect, alignment, str);
-    //getQpainter().restore();
-    //p.end();
-    //p.drawRect(getX(),getY(),w,h);
 
 }
 
@@ -67,7 +51,6 @@ void text::setAlignment(Qt::AlignmentFlag)
 
 void text::setSize(int size)
 {
-    pointSize = size;
     font.setPointSize(size);
     getQpainter().setFont(font);
 }
@@ -75,6 +58,12 @@ void text::setSize(int size)
 void text::setFont(QString fontFamily)
 {
     font.setFamily(fontFamily);
+    getQpainter().setFont(font);
+}
+
+void text::setFont(QFont::StyleHint style)
+{
+    font.setStyleHint(style);
     getQpainter().setFont(font);
 }
 

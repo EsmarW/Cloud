@@ -35,17 +35,26 @@ void LogWidget::onLoginClicked()
     // Example: Validate username and password
     if (usernameLineEdit->text() == "admin" && passwordLineEdit->text() == "password") {
         // On success, hide login and show main window
+        //Ui::admin = true;
         mainw *mainWindow = new mainw();
         mainWindow->show();
-        this->close();
+        mainWindow->setAdmin(true);
+        mainWindow->setParent(this);
+        this->hide();
     } else {
         QMessageBox::warning(this, "Login Failed", "Invalid credentials. Please try again.");
     }
+}
+
+void LogWidget::showLogin(){
+    //this->show();
 }
 
 void LogWidget::onGuestLoginClicked()
 {
     mainw *mainW = new mainw();
     mainW->show();
-    this->close();
+    mainW->setAdmin(false);
+    mainW->setParent(this);
+    this->hide();
 }

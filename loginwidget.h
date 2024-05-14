@@ -14,6 +14,7 @@ class LogWidget : public QWidget
 
 public:
     explicit LogWidget(QWidget *parent = nullptr);
+    static void showLogin();
 
 private slots:
     void onLoginClicked();

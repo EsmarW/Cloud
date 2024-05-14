@@ -10,6 +10,7 @@ mainw::mainw(QWidget *parent)
     ui->setupUi(this);
     ui->canvas->drawShapes();
     setWindowTitle(tr("2D Shape Modeler")); //Sets name to window
+    if (admin){ std::cout << "Admin" << std::endl;}
 }
 
 mainw::~mainw()
@@ -17,15 +18,29 @@ mainw::~mainw()
     delete ui;
 }
 
+void mainw::setParent (QWidget *p){
+    parent = p;
+}
+
 void mainw::on_exitButton_clicked(){
     this->close();
 }
 
+void mainw::on_loginButton_clicked(){
+    parent->show();
+    this->close();
+}
+
 void mainw::on_updateButton_clicked(){
+    if (admin){
     class add *a = new add();
     a->setShapeList(ui->canvas->getShapeList());
     a->show();
-    //ui->canvas->update();
+    }
+    else{
+        QMessageBox::warning(this, "Admin Credentials Not Detected", \
+            "Not logged in as an Administrator. Please log in and try again.");
+    }
 }
 
 void mainw::on_resetButton_clicked(){
@@ -45,9 +60,14 @@ void mainw::update(){
 }
 
 void mainw::on_moveButton_clicked(){
-    class move *m = new class move();
-    //m->move(ui->canvas->getShapeList());
-    m->setShapeList(ui->canvas->getShapeList());
-    m->show();
+    if (admin){
+        class move *m = new class move();
+        m->setShapeList(ui->canvas->getShapeList());
+        m->show();
+    }
+    else{
+        QMessageBox::warning(this, "Admin Credentials Not Detected", \
+                             "Not logged in as an Administrator. Please log in and try again.");
+    }
 }
 

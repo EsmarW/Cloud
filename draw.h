@@ -18,6 +18,7 @@
 using namespace Vector;
 using namespace Shapes;
 namespace Draw{
+
 class draw : public QWidget
 {
     Q_OBJECT

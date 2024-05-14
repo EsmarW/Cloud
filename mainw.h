@@ -7,11 +7,11 @@
 #include "shapes.h"
 #include "move.h"
 #include "add.h"
+#include"loginwidget.h"
 
 using namespace Draw;
 using namespace Vector;
 using namespace Shapes;
-
 
 namespace Ui {
 class mainw;
@@ -22,10 +22,10 @@ class mainw : public QDialog
     Q_OBJECT
 
 public:
-    //void paintEvent(QPaintEvent *event);
-
     explicit mainw(QWidget *parent = nullptr);
     ~mainw();
+    void setParent (QWidget *parent);
+    void setAdmin(bool b){ admin = b; }
 
 private slots:
     void on_exitButton_clicked();
@@ -33,15 +33,15 @@ private slots:
     void on_moveButton_clicked();
     void on_resetButton_clicked();
     void on_clearButton_clicked();
+    void on_loginButton_clicked();
 
     void update();
 //    void on_widget_customContextMenuRequested(const QPoint &pos);
 
 private:
     Ui::mainw *ui;
-    draw* dw;
-    shape* s;
     vector<shape*> shapeList;
+    QWidget *parent;
     bool admin;
 };
 

@@ -25,6 +25,7 @@ public:
     void setAlignment(Qt::AlignmentFlag);
     void setSize(int);
     void setFont(QString);
+    void setFont(QFont::StyleHint);
     void setStyle(QFont::Style);
     void setWeight(QFont::Weight);
     void setWidth(int);

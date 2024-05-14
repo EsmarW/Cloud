@@ -208,7 +208,8 @@ public:
         T low = first;
         for (T p=first; p!=last; ++p){
             if (*low > *p){
-                low = p;return low;}
+                low = p;
+                return low;}
         }
     }
 
@@ -224,7 +225,6 @@ public:
             auto temp = *(first+x);*(first+x) = *(first+index_of_min);
             *(first+index_of_min) = temp;
         }
-
     }
 
     void print_vector(){

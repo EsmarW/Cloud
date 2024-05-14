@@ -239,7 +239,7 @@
     <string>BrushStyle:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_9">
+  <widget class="QLabel" name="textStringLabel">
    <property name="geometry">
     <rect>
      <x>240</x>
@@ -534,6 +534,290 @@
    <item>
     <property name="text">
      <string>CrossPattern</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLineEdit" name="textString">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>20</y>
+     <width>211</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="textSizeLabel">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>60</y>
+     <width>81</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>81</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Text Size:</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="textSize">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>60</y>
+     <width>42</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>5</number>
+   </property>
+   <property name="maximum">
+    <number>100</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="textALabel">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>100</y>
+     <width>121</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>81</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Text Alignment:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="textFontLabel">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>140</y>
+     <width>81</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>81</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Text Font :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="textSLabel">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>180</y>
+     <width>121</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>81</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Text Style :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="textWLabel">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>220</y>
+     <width>121</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>81</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Text Weight :</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="textA">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>100</y>
+     <width>161</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>AlignLeft</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>AlignRight</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>AlignJustify</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>AlignCenter</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="textFont">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>140</y>
+     <width>201</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Helvetica</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Impact</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Courier</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>OldEnglish</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>System</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="textStyle">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>180</y>
+     <width>121</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Normal</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Italic</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Oblique</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="textWeight">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>220</y>
+     <width>121</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Thin</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Light</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Normal</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Medium</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Bold</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>ExtraBold</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Black</string>
     </property>
    </item>
   </widget>

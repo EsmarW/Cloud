@@ -26,18 +26,19 @@ public:
     QPushButton *moveButton;
     QPushButton *resetButton;
     QPushButton *clearButton;
+    QPushButton *loginButton;
 
     void setupUi(QDialog *mainw)
     {
         if (mainw->objectName().isEmpty())
             mainw->setObjectName("mainw");
-        mainw->resize(837, 547);
+        mainw->resize(1135, 531);
         exitButton = new QPushButton(mainw);
         exitButton->setObjectName("exitButton");
-        exitButton->setGeometry(QRect(730, 500, 93, 29));
+        exitButton->setGeometry(QRect(1030, 480, 93, 29));
         canvas = new draw(mainw);
         canvas->setObjectName("canvas");
-        canvas->setGeometry(QRect(10, 10, 711, 521));
+        canvas->setGeometry(QRect(10, 10, 1011, 511));
         QPalette palette;
         QBrush brush(QColor(0, 0, 0, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -104,16 +105,19 @@ public:
         canvas->setPalette(palette);
         updateButton = new QPushButton(mainw);
         updateButton->setObjectName("updateButton");
-        updateButton->setGeometry(QRect(730, 340, 93, 29));
+        updateButton->setGeometry(QRect(1030, 20, 93, 29));
         moveButton = new QPushButton(mainw);
         moveButton->setObjectName("moveButton");
-        moveButton->setGeometry(QRect(730, 380, 93, 29));
+        moveButton->setGeometry(QRect(1030, 60, 93, 29));
         resetButton = new QPushButton(mainw);
         resetButton->setObjectName("resetButton");
-        resetButton->setGeometry(QRect(730, 460, 93, 29));
+        resetButton->setGeometry(QRect(1030, 440, 93, 29));
         clearButton = new QPushButton(mainw);
         clearButton->setObjectName("clearButton");
-        clearButton->setGeometry(QRect(730, 420, 93, 29));
+        clearButton->setGeometry(QRect(1030, 100, 93, 29));
+        loginButton = new QPushButton(mainw);
+        loginButton->setObjectName("loginButton");
+        loginButton->setGeometry(QRect(1030, 400, 93, 29));
 
         retranslateUi(mainw);
 
@@ -131,6 +135,7 @@ public:
         moveButton->setText(QCoreApplication::translate("mainw", "Move", nullptr));
         resetButton->setText(QCoreApplication::translate("mainw", "Reset", nullptr));
         clearButton->setText(QCoreApplication::translate("mainw", "Clear", nullptr));
+        loginButton->setText(QCoreApplication::translate("mainw", "Login", nullptr));
     } // retranslateUi
 
 };

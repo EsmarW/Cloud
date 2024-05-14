@@ -29,23 +29,14 @@ void move::on_updateButton_clicked(){
     id = temp.toInt();
     x = ui->xBox->value();
     y = ui->yBox->value();
-    // std::cout << id << std::endl;
-    // std::cout << x << std::endl;
-    // std::cout << y << std::endl;
-
-    //int i = 0;
-    //while(id != shapes[i]->getId()){
-    //    ++i;}
-    //cout << i << endl ; //one less than ID, for vector index
 
     if (id <= shapes.size() && id > 0 ){
-        shapes[--id]->move(x,y);}
-    else{
+        shapes[--id]->move(x,y);
+        this->close();
+    } else{
         //Invalid Shape Id Entered Pop up
         QMessageBox::warning(this, "Invalid Shape ID", "Invalid Shape ID. Please try again.");
     }
-
-    this->close();
 }
 
 void move::setShapeList(Vector::vector<shape *> old)

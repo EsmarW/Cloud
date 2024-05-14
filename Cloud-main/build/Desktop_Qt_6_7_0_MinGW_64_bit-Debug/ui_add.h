@@ -14,6 +14,7 @@
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpinBox>
 
@@ -31,7 +32,7 @@ public:
     QLabel *label_6;
     QLabel *label_7;
     QLabel *label_8;
-    QLabel *label_9;
+    QLabel *textStringLabel;
     QComboBox *penColorBox;
     QPushButton *exitButton;
     QSpinBox *penWidth;
@@ -41,6 +42,17 @@ public:
     QComboBox *penJoinStyle;
     QComboBox *brushColorBox;
     QComboBox *brushStyleBox;
+    QLineEdit *textString;
+    QLabel *textSizeLabel;
+    QSpinBox *textSize;
+    QLabel *textALabel;
+    QLabel *textFontLabel;
+    QLabel *textSLabel;
+    QLabel *textWLabel;
+    QComboBox *textA;
+    QComboBox *textFont;
+    QComboBox *textStyle;
+    QComboBox *textWeight;
 
     void setupUi(QDialog *add)
     {
@@ -99,11 +111,11 @@ public:
         label_8->setGeometry(QRect(10, 300, 101, 20));
         label_8->setMinimumSize(QSize(101, 20));
         label_8->setFont(font1);
-        label_9 = new QLabel(add);
-        label_9->setObjectName("label_9");
-        label_9->setGeometry(QRect(240, 20, 101, 20));
-        label_9->setMinimumSize(QSize(101, 20));
-        label_9->setFont(font1);
+        textStringLabel = new QLabel(add);
+        textStringLabel->setObjectName("textStringLabel");
+        textStringLabel->setGeometry(QRect(240, 20, 101, 20));
+        textStringLabel->setMinimumSize(QSize(101, 20));
+        textStringLabel->setFont(font1);
         penColorBox = new QComboBox(add);
         penColorBox->addItem(QString());
         penColorBox->addItem(QString());
@@ -167,6 +179,70 @@ public:
         brushStyleBox->addItem(QString());
         brushStyleBox->setObjectName("brushStyleBox");
         brushStyleBox->setGeometry(QRect(100, 300, 111, 26));
+        textString = new QLineEdit(add);
+        textString->setObjectName("textString");
+        textString->setGeometry(QRect(320, 20, 211, 26));
+        textSizeLabel = new QLabel(add);
+        textSizeLabel->setObjectName("textSizeLabel");
+        textSizeLabel->setGeometry(QRect(240, 60, 81, 20));
+        textSizeLabel->setMinimumSize(QSize(81, 20));
+        textSizeLabel->setFont(font1);
+        textSize = new QSpinBox(add);
+        textSize->setObjectName("textSize");
+        textSize->setGeometry(QRect(320, 60, 42, 26));
+        textSize->setMinimum(5);
+        textSize->setMaximum(100);
+        textALabel = new QLabel(add);
+        textALabel->setObjectName("textALabel");
+        textALabel->setGeometry(QRect(240, 100, 121, 20));
+        textALabel->setMinimumSize(QSize(81, 20));
+        textALabel->setFont(font1);
+        textFontLabel = new QLabel(add);
+        textFontLabel->setObjectName("textFontLabel");
+        textFontLabel->setGeometry(QRect(240, 140, 81, 20));
+        textFontLabel->setMinimumSize(QSize(81, 20));
+        textFontLabel->setFont(font1);
+        textSLabel = new QLabel(add);
+        textSLabel->setObjectName("textSLabel");
+        textSLabel->setGeometry(QRect(240, 180, 121, 20));
+        textSLabel->setMinimumSize(QSize(81, 20));
+        textSLabel->setFont(font1);
+        textWLabel = new QLabel(add);
+        textWLabel->setObjectName("textWLabel");
+        textWLabel->setGeometry(QRect(240, 220, 121, 20));
+        textWLabel->setMinimumSize(QSize(81, 20));
+        textWLabel->setFont(font1);
+        textA = new QComboBox(add);
+        textA->addItem(QString());
+        textA->addItem(QString());
+        textA->addItem(QString());
+        textA->addItem(QString());
+        textA->setObjectName("textA");
+        textA->setGeometry(QRect(360, 100, 161, 26));
+        textFont = new QComboBox(add);
+        textFont->addItem(QString());
+        textFont->addItem(QString());
+        textFont->addItem(QString());
+        textFont->addItem(QString());
+        textFont->addItem(QString());
+        textFont->setObjectName("textFont");
+        textFont->setGeometry(QRect(320, 140, 201, 26));
+        textStyle = new QComboBox(add);
+        textStyle->addItem(QString());
+        textStyle->addItem(QString());
+        textStyle->addItem(QString());
+        textStyle->setObjectName("textStyle");
+        textStyle->setGeometry(QRect(330, 180, 121, 26));
+        textWeight = new QComboBox(add);
+        textWeight->addItem(QString());
+        textWeight->addItem(QString());
+        textWeight->addItem(QString());
+        textWeight->addItem(QString());
+        textWeight->addItem(QString());
+        textWeight->addItem(QString());
+        textWeight->addItem(QString());
+        textWeight->setObjectName("textWeight");
+        textWeight->setGeometry(QRect(330, 220, 121, 26));
 
         retranslateUi(add);
 
@@ -191,7 +267,7 @@ public:
         label_6->setText(QCoreApplication::translate("add", "PenJoinStyle:", nullptr));
         label_7->setText(QCoreApplication::translate("add", "BrushColor:", nullptr));
         label_8->setText(QCoreApplication::translate("add", "BrushStyle:", nullptr));
-        label_9->setText(QCoreApplication::translate("add", "TextString:", nullptr));
+        textStringLabel->setText(QCoreApplication::translate("add", "TextString:", nullptr));
         penColorBox->setItemText(0, QCoreApplication::translate("add", "white", nullptr));
         penColorBox->setItemText(1, QCoreApplication::translate("add", "black", nullptr));
         penColorBox->setItemText(2, QCoreApplication::translate("add", "red", nullptr));
@@ -234,6 +310,35 @@ public:
         brushStyleBox->setItemText(2, QCoreApplication::translate("add", "VerPattern", nullptr));
         brushStyleBox->setItemText(3, QCoreApplication::translate("add", "NoBrush", nullptr));
         brushStyleBox->setItemText(4, QCoreApplication::translate("add", "CrossPattern", nullptr));
+
+        textString->setText(QString());
+        textSizeLabel->setText(QCoreApplication::translate("add", "Text Size:", nullptr));
+        textALabel->setText(QCoreApplication::translate("add", "Text Alignment:", nullptr));
+        textFontLabel->setText(QCoreApplication::translate("add", "Text Font :", nullptr));
+        textSLabel->setText(QCoreApplication::translate("add", "Text Style :", nullptr));
+        textWLabel->setText(QCoreApplication::translate("add", "Text Weight :", nullptr));
+        textA->setItemText(0, QCoreApplication::translate("add", "AlignLeft", nullptr));
+        textA->setItemText(1, QCoreApplication::translate("add", "AlignRight", nullptr));
+        textA->setItemText(2, QCoreApplication::translate("add", "AlignJustify", nullptr));
+        textA->setItemText(3, QCoreApplication::translate("add", "AlignCenter", nullptr));
+
+        textFont->setItemText(0, QCoreApplication::translate("add", "Helvetica", nullptr));
+        textFont->setItemText(1, QCoreApplication::translate("add", "Impact", nullptr));
+        textFont->setItemText(2, QCoreApplication::translate("add", "Courier", nullptr));
+        textFont->setItemText(3, QCoreApplication::translate("add", "OldEnglish", nullptr));
+        textFont->setItemText(4, QCoreApplication::translate("add", "System", nullptr));
+
+        textStyle->setItemText(0, QCoreApplication::translate("add", "Normal", nullptr));
+        textStyle->setItemText(1, QCoreApplication::translate("add", "Italic", nullptr));
+        textStyle->setItemText(2, QCoreApplication::translate("add", "Oblique", nullptr));
+
+        textWeight->setItemText(0, QCoreApplication::translate("add", "Thin", nullptr));
+        textWeight->setItemText(1, QCoreApplication::translate("add", "Light", nullptr));
+        textWeight->setItemText(2, QCoreApplication::translate("add", "Normal", nullptr));
+        textWeight->setItemText(3, QCoreApplication::translate("add", "Medium", nullptr));
+        textWeight->setItemText(4, QCoreApplication::translate("add", "Bold", nullptr));
+        textWeight->setItemText(5, QCoreApplication::translate("add", "ExtraBold", nullptr));
+        textWeight->setItemText(6, QCoreApplication::translate("add", "Black", nullptr));
 
     } // retranslateUi
 

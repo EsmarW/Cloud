@@ -7,7 +7,23 @@ add::add(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowTitle(tr("Add Shape")); //Sets string to window name
+    ui->penStyle->setCurrentIndex(1);
+    ui->penWidth->setValue(1);
+    ui->textSize->setValue(16);
 
+    //Hide Text Properties until Text Shape is selected
+    // ui->textString->hide();
+    // ui->textStringLabel->hide();
+    // ui->textSize->hide();
+    // ui->textSizeLabel->hide();
+    // ui->textSLabel->hide();
+    // ui->textStyle->hide();
+    // ui->textWeight->hide();
+    // ui->textWLabel->hide();
+    // ui->textA->hide();
+    // ui->textALabel->hide();
+    // ui->textFontLabel->hide();
+    // ui->textFont->hide();
 }
 
 add::~add()
@@ -35,6 +51,80 @@ void add::on_updateButton_clicked()
     Qt::PenStyle penStyle;
     Qt::GlobalColor brushColor;
     Qt::BrushStyle brushStyle;
+
+    Qt::AlignmentFlag align;
+    QFont::Style fontStyle;
+    QString font; //https://doc.qt.io/qt-5/qfont.html#StyleHint-enum
+    QFont::Weight weight; //https://doc.qt.io/qt-5/qfont.html#Weight-enum
+    QString textString;
+    textString = ui->textString->text();
+    int fontSize;
+    fontSize = ui->textSize->value();
+
+    //font = static_cast<QFont::StyleHint>(ui->textFont->currentIndex());
+
+    switch(ui->textFont->currentIndex()){
+        case 0:{
+            font = "Helvetica"	;
+        }break;
+        case 1:{
+            font = "Impact"	;
+        }break;
+        case 2:{
+            font = "Courier";
+        }break;
+        case 3:{
+            font = "System"	;
+        }break;
+    }
+
+    switch(ui->textWeight->currentIndex()){
+    case 0:{
+        weight = QFont::Thin	;
+    } break;
+    case 1:{
+        weight = QFont::Light;
+    } break;
+    case 2:{
+        weight = QFont::Medium;
+    } break;
+    case 3:{
+        weight = QFont::Bold;
+    } break;
+    case 4:{
+        weight = QFont::ExtraBold;
+    } break;
+    case 5:{
+        weight = QFont::Black;
+    } break;
+    }
+
+    switch(ui->textStyle->currentIndex()){
+    case 0:{
+        fontStyle = QFont::StyleNormal;
+    } break;
+    case 1:{
+        fontStyle = QFont::StyleItalic;
+    } break;
+    case 2:{
+        fontStyle = QFont::StyleOblique;
+    } break;
+    }
+
+    switch(ui->textA->currentIndex()){
+    case 0:{
+        align = Qt::AlignLeft;
+    } break;
+    case 1:{
+        align = Qt::AlignRight;
+    } break;
+    case 2:{
+        align = Qt::AlignJustify;
+    } break;
+    case 3:{
+        align = Qt::AlignCenter;
+    } break;
+    }
 
     switch(ui->brushStyleBox->currentIndex()){
     case 0:{
@@ -79,26 +169,6 @@ void add::on_updateButton_clicked()
     }
 
     penStyle = static_cast<Qt::PenStyle>(ui->penStyle->currentIndex());
-    // switch(ui->penStyle->currentIndex()){ //PenStyle
-    // case 0:{
-    //     penStyle = static_cast<Qt::PenStyle>(0); //NoPen
-    // } break;
-    // case 1:{
-    //     penStyle = static_cast<Qt::PenStyle>(1); //Solid pen
-    // } break;
-    // case 2:{
-    //     penStyle = static_cast<Qt::PenStyle>(2);//Dash
-    // } break;
-    // case 3:{
-    //     penStyle = static_cast<Qt::PenStyle>(3); //Dot
-    // } break;
-    // case 4:{
-    //     penStyle = static_cast<Qt::PenStyle>(4); //Dash Dot
-    // } break;
-    // case 5:{
-    //     penStyle = static_cast<Qt::PenStyle>(5); //Dash Dot Dot
-    // } break;
-    // }
 
     //Qt::GlobalColor penColor = static_cast<Qt::GlobalColor>(ui->penColorBox->currentIndex());
     switch(ui->penColorBox->currentIndex()){ //Pen Color
@@ -187,7 +257,7 @@ void add::on_updateButton_clicked()
         pl->set_point(QPoint(500,100));
         pl->setPen(penColor, penWidth,penStyle, penCapStyle, penJoinStyle);
         pl->setBrush(brushColor, brushStyle);
-        pl->move(100,150);
+        pl->move(200,0);
         shapes->push_back(pl);
 
     }break;
@@ -203,8 +273,9 @@ void add::on_updateButton_clicked()
         p->setPen(penColor, penWidth,penStyle, penCapStyle, penJoinStyle);
         p->setBrush(brushColor, brushStyle);
         shapes->push_back(p);
-        p->move(350,270);
+        p->move(710,-70);
     }break;
+
     case 4:{
         rectangle* r = new rectangle(this);
         r->setId(id);
@@ -213,32 +284,40 @@ void add::on_updateButton_clicked()
         r->setHeight(100);
         r->setPen(penColor, penWidth,penStyle, penCapStyle, penJoinStyle);
         r->setBrush(brushColor, brushStyle);
-        r->move(50,200);
+        r->move(400,170);
         shapes->push_back(r);
     }break;
+
     case 5:{
         ellipse* e = new ellipse(this);
         e->setId(id);
-        e->setCoords(300,400);
+        e->setCoords(700,370);
         e->setWidth(150);
         e->setHeight(100);
         e->setPen(penColor, penWidth,penStyle, penCapStyle, penJoinStyle);
         e->setBrush(brushColor, brushStyle);
         shapes->push_back(e);
     }break;
+
     case 6:{
         text* t = new text(this);
         t->setId(id);
-        t->setSize(16);
-        t->setString(QString("2D Graphics Modeler"));
-        t->setCoords(100,350);
-        t->setWidth(500);
-        t->setHeight(50);
-        t->setStyle(QFont::Style::StyleNormal);
-        t->setWeight(QFont::Weight::Normal);
-        t->setPen(Qt::GlobalColor::darkMagenta, 5 ,Qt::PenStyle::SolidLine, Qt::PenCapStyle::FlatCap, Qt::PenJoinStyle::RoundJoin);
-        t->setFont(QString("Impact")); //Font
-        t->move(0,100);
+        t->setSize(fontSize);
+        //t->setString(QString("Class Project - 2D Graphics Modeler"));
+        t->setString(textString); //Print Text from inputted string
+        t->setCoords(20,350);
+        t->setWidth(fontSize * textString.length());
+        t->setHeight(5 * fontSize);
+        t->setStyle(fontStyle);
+        t->setWeight(weight);
+        t->setAlignment(align);
+        // t->setStyle(QFont::Style::StyleItalic);
+        // t->setWeight(QFont::Weight::Normal);
+        // t->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        t->setPen(penColor, penWidth,penStyle, penCapStyle, penJoinStyle);
+        //t->setFont(("Impact"));
+        t->setFont(font);
+        t->move(0,70);
         shapes->push_back(t);
     }break;
     }
