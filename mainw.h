@@ -9,6 +9,7 @@
 #include "add.h"
 #include"loginwidget.h"
 #include"aboutuswidget.h"
+#include "testimonials.h"
 
 
 using namespace Draw;
@@ -37,6 +38,7 @@ private slots:
     void on_clearButton_clicked();
     void on_loginButton_clicked();
     void on_contactButton_clicked();
+    void on_testimonialButton_clicked();
 
     void update();
 //    void on_widget_customContextMenuRequested(const QPoint &pos);
@@ -46,8 +48,6 @@ private:
     vector<shape*> shapeList;
     QWidget *parent;
     bool admin;
-    void createTestimonialTab();
-    void createAboutUsTab();
 };
 
 #endif // MAINW_H

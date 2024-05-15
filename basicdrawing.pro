@@ -15,6 +15,7 @@ HEADERS       = \
                 polyline.h \
                 rectangle.h \
                 shapes.h \
+                testimonials.h \
                 text.h \
                 vector.h
 SOURCES       = main.cpp \
@@ -31,6 +32,7 @@ SOURCES       = main.cpp \
                 polyline.cpp \
                 rectangle.cpp \
                 shapes.cpp \
+                testimonials.cpp \
                 text.cpp \
                 vector.cpp
 RESOURCES     = basicdrawing.qrc
@@ -43,7 +45,8 @@ FORMS += \
     aboutuswidget.ui \
     add.ui \
     mainw.ui \
-    move.ui
+    move.ui \
+    testimonials.ui
 
 DISTFILES += \
     ../logo.png \

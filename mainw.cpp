@@ -75,4 +75,9 @@ void mainw::on_contactButton_clicked(){
     class aboutuswidget *w = new class aboutuswidget();
     w->show();
 }
+void mainw::on_testimonialButton_clicked(){
+    class testimonials *w = new class testimonials();
+    w->show();
+}
+
 
