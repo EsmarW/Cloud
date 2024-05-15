@@ -49,7 +49,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:700;&quot;&gt;Evan Stewart&lt;br/&gt;Esmar Walkman&lt;br/&gt;Josh Baxter&lt;br/&gt;Max Tan&lt;br/&gt;Yu-chen Chung&lt;br/&gt;Kaiass Asadi&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:700;&quot;&gt;Evan Stewart&lt;br/&gt;Esmar Walkman&lt;br/&gt;Josh Baxter&lt;br/&gt;Max Tan&lt;br/&gt;Yu-chen Chung&lt;br/&gt;Kaiss Asadi&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLabel" name="imageCloud">

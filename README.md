@@ -4,8 +4,9 @@ CS1C GROUP PROJECT - TEAM CLOUD
 Team Members:  
 Esmar Walkman  
 Evan Stewart  
-Josh Baxter  
+Joshua Baxter  
 Kaiss Asadi  
 Max Tan  
 Yu-chen Chung  
 Stephanie Tucker  
+Min Jeon  

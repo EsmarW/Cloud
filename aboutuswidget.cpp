@@ -2,6 +2,7 @@
 #include "ui_aboutuswidget.h"
 #include <QCoreApplication>
 #include <QDir>
+#include <iostream>
 
 aboutuswidget::aboutuswidget(QWidget *parent)
     : QDialog(parent)
@@ -9,28 +10,17 @@ aboutuswidget::aboutuswidget(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowTitle(tr("Contact Us")); //Sets name to window
-    // Create UI elements
-        imageLabel = new QLabel(this);
-
-        // Get the directory of the executable
-        QString appDir = QCoreApplication::applicationDirPath();
-
-        // Navigate to the parent directory of the executable
-        QDir parentDir(appDir);
-        parentDir.cdUp();
-
-        // Check if the Cloud-master directory exists
-        QDir cloudMasterDir(parentDir.absolutePath() + "/Cloud-main");
-        if (cloudMasterDir.exists()) {
-            // Construct the path to the image file relative to the "Cloud-main" directory
-            QString imagePath = cloudMasterDir.absoluteFilePath("images/logo.png");
-
-            // Set the pixmap to the image label
-            ui->imageCloud->setPixmap(QPixmap(imagePath));
-        }
     ui->imageCloud->setScaledContents(true);
+    //ui->imageCloud->setPixmap(QPixmap("C:/Users/localuser/Desktop/Cloud-main/images/logo.png"));
 
-
+    QDir d(QDir::currentPath());
+    d.cdUp();
+    d.cdUp();
+    d.cdUp();
+    QString parentPath = d.path();
+    QString imagePath = parentPath + "/images/logo.png";
+    std::cout << imagePath.toStdString() << std::endl << std::endl;
+    ui->imageCloud->setPixmap(QPixmap(imagePath)); //Sets image path to /Cloud-main/images/logo.png
 }
 
 aboutuswidget::~aboutuswidget()

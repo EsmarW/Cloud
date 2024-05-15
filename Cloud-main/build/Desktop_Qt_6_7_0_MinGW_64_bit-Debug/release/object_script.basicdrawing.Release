@@ -12,6 +12,7 @@ release/polygon.o
 release/polyline.o
 release/rectangle.o
 release/shapes.o
+release/testimonials.o
 release/text.o
 release/vector.o
 release/qrc_basicdrawing.o
@@ -21,3 +22,4 @@ release/moc_draw.o
 release/moc_loginwidget.o
 release/moc_mainw.o
 release/moc_move.o
+release/moc_testimonials.o

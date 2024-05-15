@@ -25,7 +25,7 @@ public:
 
 private slots:
     void onSubmitClicked();
-    void on_exitButton_clicked();
+    //void on_exitButton_clicked();
 
 private:
     Ui::testimonials *ui;

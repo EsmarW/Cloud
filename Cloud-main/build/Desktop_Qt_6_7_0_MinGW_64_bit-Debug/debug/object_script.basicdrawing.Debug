@@ -12,6 +12,7 @@ debug/polygon.o
 debug/polyline.o
 debug/rectangle.o
 debug/shapes.o
+debug/testimonials.o
 debug/text.o
 debug/vector.o
 debug/qrc_basicdrawing.o
@@ -21,3 +22,4 @@ debug/moc_draw.o
 debug/moc_loginwidget.o
 debug/moc_mainw.o
 debug/moc_move.o
+debug/moc_testimonials.o

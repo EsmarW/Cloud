@@ -50,4 +50,6 @@ FORMS += \
 
 DISTFILES += \
     ../logo.png \
+    Cloud-main/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/shapes.txt \
+    Cloud-main/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/testimonials.txt \
     shapes.txt

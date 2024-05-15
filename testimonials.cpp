@@ -75,6 +75,6 @@ void testimonials::onSubmitClicked()
     entryWidget->clear();
 }
 
-void testimonials::on_exitButton_clicked(){
-    this->close();
-}
+// void testimonials::on_exitButton_clicked(){
+//     this->close();
+// }
