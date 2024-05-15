@@ -742,12 +742,7 @@
    </item>
    <item>
     <property name="text">
-     <string>OldEnglish</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>System</string>
+     <string>Times New Roman</string>
     </property>
    </item>
   </widget>

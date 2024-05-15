@@ -546,6 +546,19 @@
     <string>Login</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="contactButton">
+   <property name="geometry">
+    <rect>
+     <x>1030</x>
+     <y>360</y>
+     <width>93</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Contact Us</string>
+   </property>
+  </widget>
  </widget>
  <customwidgets>
   <customwidget>

@@ -2,6 +2,7 @@ QT += widgets
 requires(qtConfig(combobox))
 
 HEADERS       = \
+                aboutuswidget.h \
                 add.h \
                 draw.h \
                 ellipse.h \
@@ -17,6 +18,7 @@ HEADERS       = \
                 text.h \
                 vector.h
 SOURCES       = main.cpp \
+                aboutuswidget.cpp \
                 add.cpp \
                 draw.cpp \
                 ellipse.cpp \
@@ -38,6 +40,11 @@ target.path = $$[QT_INSTALL_EXAMPLES]/widgets/painting/basicdrawing
 INSTALLS += target
 
 FORMS += \
+    aboutuswidget.ui \
     add.ui \
     mainw.ui \
     move.ui
+
+DISTFILES += \
+    ../logo.png \
+    shapes.txt

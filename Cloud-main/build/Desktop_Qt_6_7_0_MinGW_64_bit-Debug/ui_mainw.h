@@ -27,6 +27,7 @@ public:
     QPushButton *resetButton;
     QPushButton *clearButton;
     QPushButton *loginButton;
+    QPushButton *contactButton;
 
     void setupUi(QDialog *mainw)
     {
@@ -118,6 +119,9 @@ public:
         loginButton = new QPushButton(mainw);
         loginButton->setObjectName("loginButton");
         loginButton->setGeometry(QRect(1030, 400, 93, 29));
+        contactButton = new QPushButton(mainw);
+        contactButton->setObjectName("contactButton");
+        contactButton->setGeometry(QRect(1030, 360, 93, 29));
 
         retranslateUi(mainw);
 
@@ -136,6 +140,7 @@ public:
         resetButton->setText(QCoreApplication::translate("mainw", "Reset", nullptr));
         clearButton->setText(QCoreApplication::translate("mainw", "Clear", nullptr));
         loginButton->setText(QCoreApplication::translate("mainw", "Login", nullptr));
+        contactButton->setText(QCoreApplication::translate("mainw", "Contact Us", nullptr));
     } // retranslateUi
 
 };

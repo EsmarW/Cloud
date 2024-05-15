@@ -14,7 +14,7 @@ private:
     int h;
 
 public:
-    text(QPaintDevice* device = nullptr, int id = -1, shapeType s = shapeType::text, QString str = "Hello");
+    text(QPaintDevice* device = nullptr, int id = -1, shapeType s = shapeType::text, QString str = "Default");
     ~text();
 
     void draw(QPainter &p, QPaintDevice* device) override;

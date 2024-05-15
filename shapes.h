@@ -19,8 +19,8 @@ public:
 
     int getId() const;    //returns ID # of shape
     shapeType getShape() const; //returns Enum Shape Type
-    const QPen& getPen() const; //returns a reference to the QPen
-    const QBrush& getBrush() const; //returns a reference to the QBrush
+    const QPen& getPen() const; //returns a reference to QPen
+    const QBrush& getBrush() const; //returns a reference to QBrush
 
     void setShape(shapeType shape);
     void setPen(Qt::GlobalColor, int width, Qt::PenStyle, Qt::PenCapStyle, Qt::PenJoinStyle);
@@ -31,8 +31,8 @@ public:
 
     void drawRect(int, int);
 
-    virtual void draw(QPainter &p, QPaintDevice* device) = 0;        //draws the shape
-    virtual void move(const int newX, const int newY) = 0;        //moves the shapes
+    virtual void draw(QPainter &p, QPaintDevice* device) = 0;   //polymorphically draws the shape
+    virtual void move(const int newX, const int newY) = 0;      //moves the shapes
     virtual double perimeter()const = 0;   //calculates the perimeter of the shape
     virtual double area()const = 0;        //calculates the area of the shape
 

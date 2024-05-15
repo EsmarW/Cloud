@@ -1,4 +1,5 @@
 release/main.o
+release/aboutuswidget.o
 release/add.o
 release/draw.o
 release/ellipse.o
@@ -14,6 +15,7 @@ release/shapes.o
 release/text.o
 release/vector.o
 release/qrc_basicdrawing.o
+release/moc_aboutuswidget.o
 release/moc_add.o
 release/moc_draw.o
 release/moc_loginwidget.o

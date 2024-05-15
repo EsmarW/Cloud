@@ -20,7 +20,7 @@ public:
     void set_point(const QPoint& point);
 
     void draw(QPainter &p, QPaintDevice* device) override;
-    void move(const int newX, const int newY)override;
+    void move(const int newX, const int newY) override;
     double area() const override;
     double perimeter() const override;
 

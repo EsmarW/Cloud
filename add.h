@@ -25,15 +25,9 @@ public:
     ~add();
     void setShapeList(vector<shape*> &);
 
-    //Qt::GlobalColor intToColor(int value);
-
 private slots:
     void on_exitButton_clicked();
     void on_updateButton_clicked();
-
-    //void shapeChanged();
-    //void penChanged();
-    //void brushChanged();
 
 private:
     Ui::add *ui;

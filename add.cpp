@@ -8,8 +8,10 @@ add::add(QWidget *parent)
     ui->setupUi(this);
     setWindowTitle(tr("Add Shape")); //Sets string to window name
     ui->penStyle->setCurrentIndex(1);
+    ui->textWeight->setCurrentIndex(2);
     ui->penWidth->setValue(1);
     ui->textSize->setValue(16);
+    ui->textA->setCurrentIndex(3);
 
     //Hide Text Properties until Text Shape is selected
     // ui->textString->hide();
@@ -74,7 +76,7 @@ void add::on_updateButton_clicked()
             font = "Courier";
         }break;
         case 3:{
-            font = "System"	;
+            font = "Times New Roman";
         }break;
     }
 

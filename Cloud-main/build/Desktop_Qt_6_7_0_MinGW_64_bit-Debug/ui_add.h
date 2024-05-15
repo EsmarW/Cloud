@@ -224,7 +224,6 @@ public:
         textFont->addItem(QString());
         textFont->addItem(QString());
         textFont->addItem(QString());
-        textFont->addItem(QString());
         textFont->setObjectName("textFont");
         textFont->setGeometry(QRect(320, 140, 201, 26));
         textStyle = new QComboBox(add);
@@ -325,8 +324,7 @@ public:
         textFont->setItemText(0, QCoreApplication::translate("add", "Helvetica", nullptr));
         textFont->setItemText(1, QCoreApplication::translate("add", "Impact", nullptr));
         textFont->setItemText(2, QCoreApplication::translate("add", "Courier", nullptr));
-        textFont->setItemText(3, QCoreApplication::translate("add", "OldEnglish", nullptr));
-        textFont->setItemText(4, QCoreApplication::translate("add", "System", nullptr));
+        textFont->setItemText(3, QCoreApplication::translate("add", "Times New Roman", nullptr));
 
         textStyle->setItemText(0, QCoreApplication::translate("add", "Normal", nullptr));
         textStyle->setItemText(1, QCoreApplication::translate("add", "Italic", nullptr));

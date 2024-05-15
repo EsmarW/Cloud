@@ -45,7 +45,7 @@ double polyline::perimeter()const
 
     for(int i = 0;i < points.size()-1;i++)
     {
-        //distance formula
+        //perimeter formula
         hold = sqrt(pow(points[i+1].x()- points[i].x(),2)+ pow(points[i+1].y()- points[i].y(),2));
         perim+=hold;
     }

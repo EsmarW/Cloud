@@ -10,7 +10,6 @@ move::move(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowTitle(tr("Move Shape")); //Sets name to window
-
 }
 
 move::~move()

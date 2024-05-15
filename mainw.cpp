@@ -71,3 +71,8 @@ void mainw::on_moveButton_clicked(){
     }
 }
 
+void mainw::on_contactButton_clicked(){
+    class aboutuswidget *w = new class aboutuswidget();
+    w->show();
+}
+

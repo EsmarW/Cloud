@@ -18,10 +18,10 @@ public:
     void setHeight(int);
     void setWidth(int);
 
-    void draw(QPainter &p, QPaintDevice* device);
-    void move(int x2,int y2);
-    double perimeter()const;
-    double area()const;
+    void draw(QPainter &p, QPaintDevice* device) override;
+    void move(int x2,int y2) override;
+    double perimeter()const override;
+    double area()const override;
 
 private:
     QRect rect;

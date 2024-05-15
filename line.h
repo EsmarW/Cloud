@@ -13,11 +13,10 @@ public:
     void setEnd(int endX, int endY);
     void setStart(int startX, int startY);
 
-    void move(const int x, const int y);
-    void movel(const int x, const int y);
-    void draw(QPainter &p, QPaintDevice* device);
-    double area()const;
-    double perimeter()const;
+    void move(const int x, const int y) override;
+    void draw(QPainter &p, QPaintDevice* device) override;
+    double area()const override;
+    double perimeter()const override;
 
 private:
     int startX;
