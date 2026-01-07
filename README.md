@@ -35,7 +35,7 @@ The project demonstrates strong OOP principles:
 
 ## Team - Cloud
 
-- Esmar Walkman
+- [Esmar Walkman](https://www.linkedin.com/in/esmarwalkman/)
 - Evan Stewart
 - Joshua Baxter
 - Kaiss Asadi
