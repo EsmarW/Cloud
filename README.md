@@ -1,10 +1,10 @@
 # 2D Graphics Modeler
 
-A Qt-based 2D graphics application demonstrating object oriented design principles and shape abstraction for CS1C.
+A Qt based 2D graphics application demonstrating object oriented design principles and shape abstraction for CS1C.
 
 ## About
 
-This project is a comprehensive 2D graphics modeler built with C++ and Qt that showcases advanced object-oriented programming concepts including polymorphism, inheritance, and abstraction. The application allows users to create, manipulate, and render various 2D shapes through an intuitive GUI interface.
+This project is a comprehensive 2D graphics modeler built with C++ and Qt that showcases advanced object oriented programming concepts including polymorphism, inheritance, and abstraction. The application allows users to create, manipulate, and render various 2D shapes through an intuitive GUI interface.
 
 The project emphasizes clean abstraction through a unified shape hierarchy, where different geometric primitives (lines, rectangles, ellipses, polygons, polylines, and text) inherit from a common base class, enabling polymorphic rendering and manipulation.
 
