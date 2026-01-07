@@ -1,6 +1,6 @@
 # 2D Graphics Modeler
 
-A Qt-based 2D graphics application demonstrating object-oriented design principles and shape abstraction for CS1C.
+A Qt-based 2D graphics application demonstrating object oriented design principles and shape abstraction for CS1C.
 
 ## About
 
